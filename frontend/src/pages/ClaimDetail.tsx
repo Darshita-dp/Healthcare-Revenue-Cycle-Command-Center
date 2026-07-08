@@ -1,14 +1,19 @@
 import { Link, useParams } from "react-router-dom";
 import { api, fmtDate, fmtMoneyFull } from "../api/client";
 import {
-  AgingBadge, ErrorState, Loading, PriorityBadge, StatusBadge, TaskStatusBadge, useFetch,
+  AgingBadge, ErrorState, Field, Loading, PriorityBadge, SectionCard, StatusBadge,
+  TaskStatusBadge, useFetch,
 } from "../components/ui";
+import { IconArrowRight, IconTarget } from "../components/Icons";
 import type { ClaimDetail as ClaimDetailType } from "../api/types";
+
+type DotTone = "blue" | "green" | "red" | "amber" | "purple" | "gray";
 
 interface TimelineEvent {
   date: string;
   title: string;
   desc: string;
+  tone: DotTone;
 }
 
 function buildTimeline(d: ClaimDetailType): TimelineEvent[] {
@@ -17,11 +22,13 @@ function buildTimeline(d: ClaimDetailType): TimelineEvent[] {
       date: d.claim.date_of_service,
       title: "Service rendered",
       desc: `${d.claim.service_line_name} — ${d.claim.provider_name} at ${d.claim.facility_name}`,
+      tone: "gray",
     },
     {
       date: d.claim.claim_submission_date,
       title: "Claim submitted",
       desc: `Billed ${fmtMoneyFull(d.claim.billed_amount)} to ${d.claim.payer_name}`,
+      tone: "blue",
     },
   ];
   if (d.denial) {
@@ -29,21 +36,25 @@ function buildTimeline(d: ClaimDetailType): TimelineEvent[] {
       date: d.denial.denial_date,
       title: `Denied — ${d.denial.denial_category}`,
       desc: `${d.denial.denial_code}: ${d.denial.denial_description} (${fmtMoneyFull(d.denial.denied_amount)})`,
+      tone: "red",
     });
     if (d.denial.appeal_submitted_date) {
       events.push({
         date: d.denial.appeal_submitted_date,
         title: "Appeal submitted",
         desc: `${d.denial.days_to_appeal} days after denial`,
+        tone: "purple",
       });
     }
     if (d.denial.appeal_outcome) {
       events.push({
         date: d.denial.appeal_submitted_date ?? d.denial.denial_date,
         title: `Appeal resolved — ${d.denial.appeal_outcome}`,
-        desc: d.denial.recovered_amount > 0
-          ? `Recovered ${fmtMoneyFull(d.denial.recovered_amount)}`
-          : "No recovery",
+        desc:
+          d.denial.recovered_amount > 0
+            ? `Recovered ${fmtMoneyFull(d.denial.recovered_amount)}`
+            : "No recovery",
+        tone: d.denial.recovered_amount > 0 ? "green" : "amber",
       });
     }
   }
@@ -52,6 +63,7 @@ function buildTimeline(d: ClaimDetailType): TimelineEvent[] {
       date: p.payment_date,
       title: `Payment received — ${fmtMoneyFull(p.paid_amount)}`,
       desc: `${p.payment_method}, ${p.days_to_payment} days after submission`,
+      tone: "green",
     });
   }
   for (const t of d.tasks) {
@@ -59,129 +71,160 @@ function buildTimeline(d: ClaimDetailType): TimelineEvent[] {
       date: t.created_date,
       title: `Task created — ${t.task_type}`,
       desc: `${t.priority} priority · ${t.assigned_team}`,
+      tone: t.priority === "Urgent" ? "red" : "amber",
     });
   }
   return events.sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function Field({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div>
-      <div style={{ fontSize: 11, fontWeight: 600, color: "var(--text-dim)", textTransform: "uppercase", letterSpacing: 0.4 }}>
-        {label}
-      </div>
-      <div style={{ fontSize: 13.5, marginTop: 2 }}>{value}</div>
-    </div>
-  );
 }
 
 export default function ClaimDetail() {
   const { claimId } = useParams<{ claimId: string }>();
   const detail = useFetch<ClaimDetailType>(() => api.claim(claimId!), [claimId]);
 
-  if (detail.loading) return <Loading label="Loading claim…" />;
+  if (detail.loading) return <Loading label="Loading claim record…" />;
   if (detail.error) return <ErrorState message={detail.error} />;
   const d = detail.data!;
   const c = d.claim;
 
   return (
     <>
-      <div className="page-header">
-        <div style={{ fontSize: 12.5, marginBottom: 6 }}>
-          <Link to="/claims">← Back to work queue</Link>
+      <Link to="/claims" className="back-link">
+        <span style={{ transform: "rotate(180deg)", display: "inline-flex" }}>
+          <IconArrowRight size={13} />
+        </span>
+        Back to work queue
+      </Link>
+
+      <div className="hero-card">
+        <div className="hero-top">
+          <div>
+            <div className="hero-id">
+              {c.claim_id}
+              <StatusBadge status={c.claim_status} />
+              {c.is_high_value && <span className="badge purple">High value</span>}
+              <AgingBadge bucket={c.aging_bucket} />
+            </div>
+            <div className="hero-sub">
+              {c.service_line_name} · service {fmtDate(c.date_of_service)} · submitted{" "}
+              {fmtDate(c.claim_submission_date)} · {c.claim_age_days} days old
+            </div>
+          </div>
+          {c.task_priority && (
+            <div style={{ textAlign: "right" }}>
+              <div style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: 0.8, textTransform: "uppercase", color: "#7e93b8" }}>
+                Queue priority
+              </div>
+              <div style={{ marginTop: 4 }}>
+                <PriorityBadge priority={c.task_priority} />
+              </div>
+            </div>
+          )}
         </div>
-        <h1 style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span className="mono" style={{ fontSize: 19 }}>{c.claim_id}</span>
-          <StatusBadge status={c.claim_status} />
-          {c.is_high_value && <span className="badge purple">High value</span>}
-          <AgingBadge bucket={c.aging_bucket} />
-        </h1>
-        <div className="desc">
-          {c.service_line_name} · {fmtDate(c.date_of_service)} · {c.payer_name}
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <div className="h-label">Billed</div>
+            <div className="h-value">{fmtMoneyFull(c.billed_amount)}</div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Allowed</div>
+            <div className="h-value">{fmtMoneyFull(d.allowed_amount)}</div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Paid</div>
+            <div className="h-value pos">{fmtMoneyFull(d.paid_amount)}</div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Patient Resp.</div>
+            <div className="h-value">{fmtMoneyFull(d.patient_responsibility)}</div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Outstanding</div>
+            <div className={`h-value ${c.outstanding_amount > 0 ? "neg" : "pos"}`}>
+              {fmtMoneyFull(c.outstanding_amount)}
+            </div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Payer</div>
+            <div className="h-value" style={{ fontSize: 14 }}>{c.payer_name}</div>
+          </div>
+          <div className="hero-stat">
+            <div className="h-label">Facility</div>
+            <div className="h-value" style={{ fontSize: 14 }}>{c.facility_name}</div>
+          </div>
         </div>
       </div>
 
-      <div className="callout" style={{ marginBottom: 16 }}>
-        <strong>Recommended action:</strong> {d.recommended_action}
+      <div className="action-panel" style={{ marginBottom: 16 }}>
+        <span className="ap-icon">
+          <IconTarget size={18} />
+        </span>
+        <div>
+          <div className="ap-label">Recommended next action</div>
+          <div className="ap-text">{d.recommended_action}</div>
+        </div>
       </div>
 
       <div className="grid two-col">
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          <div className="card">
-            <h3>Claim Summary</h3>
-            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
-              <Field label="Billed" value={<strong>{fmtMoneyFull(c.billed_amount)}</strong>} />
-              <Field label="Allowed" value={fmtMoneyFull(d.allowed_amount)} />
-              <Field label="Paid" value={fmtMoneyFull(d.paid_amount)} />
-              <Field label="Patient Resp." value={fmtMoneyFull(d.patient_responsibility)} />
-              <Field
-                label="Outstanding"
-                value={
-                  <strong style={{ color: c.outstanding_amount > 0 ? "var(--red)" : "var(--green)" }}>
-                    {fmtMoneyFull(c.outstanding_amount)}
-                  </strong>
-                }
-              />
-              <Field label="Claim Age" value={`${c.claim_age_days} days`} />
-            </div>
-          </div>
-
-          <div className="card">
-            <h3>Parties</h3>
-            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <SectionCard title="Claim Overview" sub="Parties and coverage on this claim">
+            <div className="field-grid">
               <Field label="Provider" value={c.provider_name} />
               <Field label="Facility" value={c.facility_name} />
               <Field label="Payer" value={`${c.payer_name} (${c.payer_type})`} />
               <Field label="Service Line" value={c.service_line_name} />
+              <Field
+                label="Patient Segment"
+                value={
+                  <>
+                    <span className="mono">{d.patient_segment.synthetic_patient_key}</span>
+                    {" · "}
+                    {d.patient_segment.age_group} · {d.patient_segment.gender}
+                  </>
+                }
+              />
+              <Field
+                label="Coverage / Risk"
+                value={`${d.patient_segment.insurance_type} · ${d.patient_segment.risk_segment} risk · ${d.patient_segment.state}`}
+              />
             </div>
-          </div>
-
-          <div className="card">
-            <h3>Patient Segment</h3>
-            <div className="card-sub">Demographic segment only — synthetic data, no identifying details.</div>
-            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 12 }}>
-              <Field label="Key" value={<span className="mono">{d.patient_segment.synthetic_patient_key}</span>} />
-              <Field label="Age Group" value={d.patient_segment.age_group} />
-              <Field label="Gender" value={d.patient_segment.gender} />
-              <Field label="State" value={d.patient_segment.state} />
-              <Field label="Insurance" value={d.patient_segment.insurance_type} />
-              <Field label="Risk Segment" value={d.patient_segment.risk_segment} />
-            </div>
-          </div>
+            <p style={{ fontSize: 11.5, color: "var(--text-faint)", margin: "12px 0 0" }}>
+              Patient shown as a demographic segment only — synthetic data, no identifying details.
+            </p>
+          </SectionCard>
 
           {d.denial && (
-            <div className="card">
-              <h3>Denial</h3>
-              <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
+            <SectionCard title="Denial Details" sub="Why the payer denied, and where the appeal stands">
+              <div className="field-grid">
                 <Field label="Category" value={<span className="badge red">{d.denial.denial_category}</span>} />
                 <Field label="Code" value={<span className="mono">{d.denial.denial_code}</span>} />
-                <Field label="Denied Amount" value={fmtMoneyFull(d.denial.denied_amount)} />
+                <Field label="Denied Amount" value={<strong>{fmtMoneyFull(d.denial.denied_amount)}</strong>} />
                 <Field label="Denial Date" value={fmtDate(d.denial.denial_date)} />
                 <Field label="Appeal Status" value={d.denial.appeal_status} />
                 <Field label="Appeal Outcome" value={d.denial.appeal_outcome ?? "—"} />
                 <Field
                   label="Recovered"
                   value={
-                    <span style={{ color: d.denial.recovered_amount > 0 ? "var(--green)" : undefined }}>
+                    <span style={{ color: d.denial.recovered_amount > 0 ? "var(--green)" : undefined, fontWeight: 650 }}>
                       {fmtMoneyFull(d.denial.recovered_amount)}
                     </span>
                   }
                 />
                 <Field
                   label="Preventable?"
-                  value={d.denial.preventable ? <span className="badge amber">Yes</span> : "No"}
+                  value={d.denial.preventable ? <span className="badge amber">Yes — process fix</span> : "No"}
                 />
               </div>
-              <p style={{ fontSize: 12.5, color: "var(--text-dim)", marginBottom: 0 }}>
+              <p style={{ fontSize: 12.5, color: "var(--text-dim)", margin: "12px 0 0" }}>
                 {d.denial.denial_description}
               </p>
-            </div>
+            </SectionCard>
           )}
 
-          <div className="card">
-            <h3>Payment History</h3>
+          <SectionCard title="Payment History" sub="Remittances applied to this claim">
             {d.payments.length === 0 ? (
-              <p style={{ color: "var(--text-dim)", fontSize: 13 }}>No payments received on this claim.</p>
+              <p style={{ color: "var(--text-dim)", fontSize: 13, margin: 0 }}>
+                No payments received on this claim.
+              </p>
             ) : (
               <table>
                 <thead>
@@ -198,7 +241,7 @@ export default function ClaimDetail() {
                     <tr key={p.payment_id}>
                       <td className="mono">{p.payment_id}</td>
                       <td>{fmtDate(p.payment_date)}</td>
-                      <td className="num">{fmtMoneyFull(p.paid_amount)}</td>
+                      <td className="num"><strong>{fmtMoneyFull(p.paid_amount)}</strong></td>
                       <td>{p.payment_method}</td>
                       <td className="num">{p.days_to_payment}</td>
                     </tr>
@@ -206,12 +249,11 @@ export default function ClaimDetail() {
                 </tbody>
               </table>
             )}
-          </div>
+          </SectionCard>
 
-          <div className="card">
-            <h3>Follow-Up Tasks</h3>
+          <SectionCard title="Follow-Up Tasks" sub="Automation-generated work on this claim">
             {d.tasks.length === 0 ? (
-              <p style={{ color: "var(--text-dim)", fontSize: 13 }}>
+              <p style={{ color: "var(--text-dim)", fontSize: 13, margin: 0 }}>
                 No automation rules fired for this claim.
               </p>
             ) : (
@@ -229,8 +271,8 @@ export default function ClaimDetail() {
                   {d.tasks.map((t) => (
                     <tr key={t.task_id}>
                       <td>
-                        {t.task_type}
-                        <div style={{ fontSize: 11.5, color: "var(--text-faint)" }}>{t.reason}</div>
+                        <span className="cell-main">{t.task_type}</span>
+                        <div className="cell-sub">{t.reason}</div>
                       </td>
                       <td><PriorityBadge priority={t.priority} /></td>
                       <td>{t.assigned_team}</td>
@@ -244,22 +286,25 @@ export default function ClaimDetail() {
                 </tbody>
               </table>
             )}
-          </div>
+          </SectionCard>
         </div>
 
-        <div className="card" style={{ alignSelf: "start" }}>
-          <h3>Claim Timeline</h3>
+        <SectionCard
+          title="Claim Timeline"
+          sub="Every event on this claim, oldest first"
+          style={{ alignSelf: "start" }}
+        >
           <ul className="timeline">
             {buildTimeline(d).map((e, i) => (
               <li key={i}>
-                <span className="t-dot" />
+                <span className={`t-dot ${e.tone}`} />
                 <div className="t-date">{fmtDate(e.date)}</div>
                 <div className="t-title">{e.title}</div>
                 <div className="t-desc">{e.desc}</div>
               </li>
             ))}
           </ul>
-        </div>
+        </SectionCard>
       </div>
     </>
   );

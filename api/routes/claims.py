@@ -44,12 +44,15 @@ def list_claims(
     priority: Optional[str] = Query(None, description="Open-task priority on the claim"),
     facility: Optional[str] = Query(None, description="Facility name (exact match)"),
     search: Optional[str] = Query(None, description="Substring match on claim ID"),
+    open_only: bool = Query(False, description="Only claims still open in A/R"),
     sort: str = Query("priority", description="priority | age | amount"),
     limit: int = Query(50, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> ClaimListResponse:
     df = store.claims_view
 
+    if open_only:
+        df = df[df["is_open"]]
     if payer:
         df = df[df["payer_name"] == payer]
     if status:
