@@ -128,7 +128,14 @@ Power BI Desktop artifacts are documented (not faked): [powerbi/dashboard_notes.
 
 ## React Operational Dashboard
 
-Six pages: **Command Center** (KPIs + payer risk cards + trends), **Claims Work Queue** (filterable, prioritized), **Claim Detail** (timeline, payments, tasks, recommended action), **Payer Performance** (scorecards + risk ranking), **Follow-Up Tasks**, and **About / Data Dictionary**.
+A polished healthcare-operations UI built with React 18 + TypeScript + Vite on a custom design system (component library, inline SVG icon set, validated chart palette — no UI framework dependency). Six pages:
+
+- **Command Center** — KPI cards with business context, revenue and denial trends, A/R aging chart, payer risk leaderboard, work-queue summary, and narrative insights
+- **Claims Work Queue** — an operational workbench: filtered summary strip, sticky seven-filter panel with search, priority-sorted table with status/aging/priority badges
+- **Claim Detail** — case-record layout: financial hero card, highlighted recommended action, denial and appeal detail, payment history, color-coded event timeline
+- **Payer Performance** — risk leaderboard cards, where-to-focus insights, full scorecard table, denial profiles per payer
+- **Follow-Up Tasks** — work management board with SLA metrics and overdue emphasis
+- **About / Data Dictionary** — in-app documentation with a visual architecture flow and KPI definitions
 
 ## Automation Rules
 
