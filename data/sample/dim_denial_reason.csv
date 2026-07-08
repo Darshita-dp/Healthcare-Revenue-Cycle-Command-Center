@@ -1,0 +1,9 @@
+denial_reason_id,denial_code,denial_category,denial_description,preventable_flag
+1,D-16,Missing documentation,Claim lacks required documentation or attachments,True
+2,D-27,Eligibility issue,Patient not eligible on date of service,True
+3,D-197,Prior authorization required,Service performed without required prior authorization,True
+4,D-11,Coding issue,Diagnosis or procedure coding inconsistent or invalid,True
+5,D-18,Duplicate claim,Exact duplicate of a previously submitted claim,True
+6,D-29,Timely filing,Claim submitted after the payer filing deadline,True
+7,D-50,Medical necessity,Service not deemed medically necessary by payer policy,False
+8,D-26,Coverage terminated,Patient coverage terminated before date of service,False

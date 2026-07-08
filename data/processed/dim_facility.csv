@@ -1,0 +1,9 @@
+facility_id,facility_name,facility_type,region,state
+1,St. Meridian Medical Center,Hospital,North,IL
+2,Lakeview Community Hospital,Hospital,North,WI
+3,Cedar Grove Clinic,Clinic,South,TX
+4,Riverbend Family Practice,Clinic,South,TX
+5,Summit Orthopedic Surgery Center,Ambulatory Surgery Center,West,CO
+6,Pacific Heights Imaging Center,Ambulatory Surgery Center,West,CA
+7,Eastgate Urgent Care,Urgent Care,East,NY
+8,Harbor Point Behavioral Health,Clinic,East,MA

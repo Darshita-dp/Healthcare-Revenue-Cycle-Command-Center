@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: rcm_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-revenue_cycle}
+      POSTGRES_USER: ${POSTGRES_USER:-rcm_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rcm_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Schema is created automatically on first container start
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./database/seed_reference_data.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rcm_user} -d ${POSTGRES_DB:-revenue_cycle}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

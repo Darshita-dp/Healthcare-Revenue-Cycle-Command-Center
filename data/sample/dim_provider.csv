@@ -1,0 +1,51 @@
+provider_id,provider_name,specialty,facility_id,city,state,npi_fake
+1,Dr. K. Osei,Pathology,2,Milwaukee,WI,FAKE0000001
+2,Dr. H. Osei,Interventional Cardiology,4,Houston,TX,FAKE0000002
+3,Dr. C. Haywood,Internal Medicine,7,Albany,NY,FAKE0000003
+4,Dr. P. Petrov,Pediatrics,7,Albany,NY,FAKE0000004
+5,Dr. C. Ueda,Pathology,3,Houston,TX,FAKE0000005
+6,Dr. W. Quintana,Clinical Psychology,2,Milwaukee,WI,FAKE0000006
+7,Dr. F. Delgado,Cardiology,8,Boston,MA,FAKE0000007
+8,Dr. N. Haywood,Psychiatry,2,Milwaukee,WI,FAKE0000008
+9,Dr. G. Yamada,Cardiology,2,Milwaukee,WI,FAKE0000009
+10,Dr. E. Silva,Pediatrics,1,Chicago,IL,FAKE0000010
+11,Dr. N. Quintana,Pediatrics,5,Denver,CO,FAKE0000011
+12,Dr. L. Delgado,Orthopedic Surgery,4,Houston,TX,FAKE0000012
+13,Dr. M. Nguyen,Sports Medicine,7,Albany,NY,FAKE0000013
+14,Dr. K. Okafor,Sports Medicine,3,Houston,TX,FAKE0000014
+15,Dr. V. Yamada,Emergency Medicine,1,Chicago,IL,FAKE0000015
+16,Dr. A. Fitzgerald,Psychiatry,5,Denver,CO,FAKE0000016
+17,Dr. N. Jefferson,Interventional Cardiology,6,San Diego,CA,FAKE0000017
+18,Dr. S. Kowalski,Emergency Medicine,3,Houston,TX,FAKE0000018
+19,Dr. P. Kowalski,Internal Medicine,6,San Diego,CA,FAKE0000019
+20,Dr. A. Nguyen,Emergency Medicine,3,Houston,TX,FAKE0000020
+21,Dr. C. Kowalski,Radiology,8,Boston,MA,FAKE0000021
+22,Dr. P. Quintana,Radiology,8,Boston,MA,FAKE0000022
+23,Dr. R. Jefferson,Pediatrics,7,Albany,NY,FAKE0000023
+24,Dr. A. Petrov,Emergency Medicine,7,Albany,NY,FAKE0000024
+25,Dr. P. Osei,Cardiology,5,Denver,CO,FAKE0000025
+26,Dr. W. Moreau,Orthopedic Surgery,1,Chicago,IL,FAKE0000026
+27,Dr. T. Zieliński,Radiology,8,Boston,MA,FAKE0000027
+28,Dr. T. Nguyen,Clinical Psychology,8,Boston,MA,FAKE0000028
+29,Dr. S. Rossi,Orthopedic Surgery,4,Houston,TX,FAKE0000029
+30,Dr. B. Haywood,Radiology,5,Denver,CO,FAKE0000030
+31,Dr. R. Novak,Orthopedic Surgery,8,Boston,MA,FAKE0000031
+32,Dr. M. Whitfield,Pathology,7,Albany,NY,FAKE0000032
+33,Dr. K. Ueda,Emergency Medicine,1,Chicago,IL,FAKE0000033
+34,Dr. S. Petrov,Pathology,1,Chicago,IL,FAKE0000034
+35,Dr. A. Delgado,Family Medicine,5,Denver,CO,FAKE0000035
+36,Dr. J. Andersson,Cardiology,2,Milwaukee,WI,FAKE0000036
+37,Dr. J. Reynolds,Internal Medicine,5,Denver,CO,FAKE0000037
+38,Dr. R. Iqbal,Radiology,3,Houston,TX,FAKE0000038
+39,Dr. S. Ramirez,Pathology,4,Houston,TX,FAKE0000039
+40,Dr. E. Yamada,Pathology,6,San Diego,CA,FAKE0000040
+41,Dr. H. Silva,Interventional Cardiology,7,Albany,NY,FAKE0000041
+42,Dr. W. Ueda,Cardiology,4,Houston,TX,FAKE0000042
+43,Dr. D. Okafor,Pathology,5,Denver,CO,FAKE0000043
+44,Dr. K. Moreau,Internal Medicine,8,Boston,MA,FAKE0000044
+45,Dr. N. Moreau,Radiology,7,Albany,NY,FAKE0000045
+46,Dr. L. Novak,Pediatrics,7,Albany,NY,FAKE0000046
+47,Dr. V. Rossi,Radiology,2,Milwaukee,WI,FAKE0000047
+48,Dr. L. Andersson,Emergency Medicine,5,Denver,CO,FAKE0000048
+49,Dr. W. Jefferson,Family Medicine,5,Denver,CO,FAKE0000049
+50,Dr. T. Haywood,Cardiology,4,Houston,TX,FAKE0000050

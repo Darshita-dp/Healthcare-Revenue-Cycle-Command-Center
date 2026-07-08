@@ -1,0 +1,10 @@
+payer_id,payer_name,payer_type,contract_type,state,risk_category
+1,Blue Summit National,Commercial,In-Network,IL,Low
+2,Northwind Health Plans,Commercial,In-Network,TX,Medium
+3,Granite Peak Health,Commercial,In-Network,NY,Low
+4,Silverline Select,Commercial,Out-of-Network,CA,High
+5,Medicare Part B,Medicare,Government,US,Low
+6,Medicare Advantage Plus,Medicare,Government,US,Medium
+7,State Medicaid Program,Medicaid,Government,IL,High
+8,Self-Pay,Self-pay,Out-of-Network,US,High
+9,TriState Workers Comp,Other,Out-of-Network,NY,Medium

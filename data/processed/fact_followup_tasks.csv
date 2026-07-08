@@ -1,0 +1,434 @@
+task_id,claim_id,task_type,priority,assigned_team,created_date,due_date,status,closed_date,reason
+TSK-000001,CLM-000044,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 406 days ago with no appeal filed
+TSK-000002,CLM-000074,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 45 days ago with no appeal filed
+TSK-000003,CLM-000122,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 47 days ago with no appeal filed
+TSK-000004,CLM-000158,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 42 days ago with no appeal filed
+TSK-000005,CLM-000188,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Completed,2026-06-30,Rule 5 — denied 210 days ago with no appeal filed
+TSK-000006,CLM-000200,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Completed,2026-06-30,Rule 5 — denied 411 days ago with no appeal filed
+TSK-000007,CLM-000253,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Completed,2026-06-29,Rule 5 — denied 25 days ago with no appeal filed
+TSK-000008,CLM-000331,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,In Progress,,Rule 5 — denied 490 days ago with no appeal filed
+TSK-000009,CLM-000444,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Completed,2026-06-30,Rule 5 — denied 76 days ago with no appeal filed
+TSK-000010,CLM-000526,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 69 days ago with no appeal filed
+TSK-000011,CLM-000655,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 58 days ago with no appeal filed
+TSK-000012,CLM-000711,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 419 days ago with no appeal filed
+TSK-000013,CLM-000761,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 221 days ago with no appeal filed
+TSK-000014,CLM-000801,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 326 days ago with no appeal filed
+TSK-000015,CLM-000809,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 428 days ago with no appeal filed
+TSK-000016,CLM-000814,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,In Progress,,Rule 5 — denied 218 days ago with no appeal filed
+TSK-000017,CLM-000860,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 38 days ago with no appeal filed
+TSK-000018,CLM-000890,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 400 days ago with no appeal filed
+TSK-000019,CLM-000921,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 99 days ago with no appeal filed
+TSK-000020,CLM-000937,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 390 days ago with no appeal filed
+TSK-000021,CLM-001002,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Open,,Rule 5 — denied 21 days ago with no appeal filed
+TSK-000022,CLM-001015,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Completed,2026-06-30,Rule 5 — denied 45 days ago with no appeal filed
+TSK-000023,CLM-001022,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 355 days ago with no appeal filed
+TSK-000024,CLM-001032,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-30,Rule 5 — denied 288 days ago with no appeal filed
+TSK-000025,CLM-001107,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 117 days ago with no appeal filed
+TSK-000026,CLM-001124,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Completed,2026-06-28,Rule 5 — denied 51 days ago with no appeal filed
+TSK-000027,CLM-001125,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Completed,2026-06-26,Rule 5 — denied 24 days ago with no appeal filed
+TSK-000028,CLM-001135,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 465 days ago with no appeal filed
+TSK-000029,CLM-001161,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 488 days ago with no appeal filed
+TSK-000030,CLM-001176,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Completed,2026-06-15,Rule 5 — denied 72 days ago with no appeal filed
+TSK-000031,CLM-001198,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Completed,2026-06-19,Rule 5 — denied 176 days ago with no appeal filed
+TSK-000032,CLM-001249,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,In Progress,,Rule 5 — denied 33 days ago with no appeal filed
+TSK-000033,CLM-001351,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 54 days ago with no appeal filed
+TSK-000034,CLM-001361,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Completed,2026-06-27,Rule 5 — denied 147 days ago with no appeal filed
+TSK-000035,CLM-001421,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,Open,,Rule 5 — denied 453 days ago with no appeal filed
+TSK-000036,CLM-001529,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,Open,,Rule 5 — denied 290 days ago with no appeal filed
+TSK-000037,CLM-001573,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 117 days ago with no appeal filed
+TSK-000038,CLM-001586,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Completed,2026-06-19,Rule 5 — denied 137 days ago with no appeal filed
+TSK-000039,CLM-001648,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Completed,2026-06-19,Rule 5 — denied 130 days ago with no appeal filed
+TSK-000040,CLM-001675,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Completed,2026-06-20,Rule 5 — denied 68 days ago with no appeal filed
+TSK-000041,CLM-001701,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Open,,Rule 5 — denied 484 days ago with no appeal filed
+TSK-000042,CLM-001767,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,In Progress,,Rule 5 — denied 94 days ago with no appeal filed
+TSK-000043,CLM-001802,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Completed,2026-06-15,Rule 5 — denied 476 days ago with no appeal filed
+TSK-000044,CLM-001828,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Completed,2026-06-13,Rule 5 — denied 193 days ago with no appeal filed
+TSK-000045,CLM-001838,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,In Progress,,Rule 5 — denied 346 days ago with no appeal filed
+TSK-000046,CLM-001886,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 415 days ago with no appeal filed
+TSK-000047,CLM-001899,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,Open,,Rule 5 — denied 178 days ago with no appeal filed
+TSK-000048,CLM-001908,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 423 days ago with no appeal filed
+TSK-000049,CLM-001992,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,In Progress,,Rule 5 — denied 134 days ago with no appeal filed
+TSK-000050,CLM-001998,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 353 days ago with no appeal filed
+TSK-000051,CLM-002005,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 48 days ago with no appeal filed
+TSK-000052,CLM-002013,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,Open,,Rule 5 — denied 510 days ago with no appeal filed
+TSK-000053,CLM-002042,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 100 days ago with no appeal filed
+TSK-000054,CLM-002079,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 500 days ago with no appeal filed
+TSK-000055,CLM-002095,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 39 days ago with no appeal filed
+TSK-000056,CLM-002264,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Completed,2026-06-16,Rule 5 — denied 58 days ago with no appeal filed
+TSK-000057,CLM-002292,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Open,,Rule 5 — denied 363 days ago with no appeal filed
+TSK-000058,CLM-002336,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,In Progress,,Rule 5 — denied 97 days ago with no appeal filed
+TSK-000059,CLM-002387,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 51 days ago with no appeal filed
+TSK-000060,CLM-002411,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,Completed,2026-06-29,Rule 5 — denied 171 days ago with no appeal filed
+TSK-000061,CLM-002445,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Completed,2026-06-15,Rule 5 — denied 76 days ago with no appeal filed
+TSK-000062,CLM-002517,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,In Progress,,Rule 5 — denied 109 days ago with no appeal filed
+TSK-000063,CLM-002596,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 43 days ago with no appeal filed
+TSK-000064,CLM-002607,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 108 days ago with no appeal filed
+TSK-000065,CLM-002608,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 33 days ago with no appeal filed
+TSK-000066,CLM-002636,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Completed,2026-06-16,Rule 5 — denied 98 days ago with no appeal filed
+TSK-000067,CLM-002682,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,Open,,Rule 5 — denied 89 days ago with no appeal filed
+TSK-000068,CLM-002745,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,In Progress,,Rule 5 — denied 390 days ago with no appeal filed
+TSK-000069,CLM-002757,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 68 days ago with no appeal filed
+TSK-000070,CLM-002787,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Open,,Rule 5 — denied 105 days ago with no appeal filed
+TSK-000071,CLM-002866,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Completed,2026-06-30,Rule 5 — denied 222 days ago with no appeal filed
+TSK-000072,CLM-002920,Appeal deadline approaching,Urgent,Appeals Team,2026-06-17,2026-06-19,Open,,Rule 5 — denied 350 days ago with no appeal filed
+TSK-000073,CLM-002989,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,In Progress,,Rule 5 — denied 253 days ago with no appeal filed
+TSK-000074,CLM-003002,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,In Progress,,Rule 5 — denied 69 days ago with no appeal filed
+TSK-000075,CLM-003013,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Cancelled,,Rule 5 — denied 94 days ago with no appeal filed
+TSK-000076,CLM-003044,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-30,Rule 5 — denied 72 days ago with no appeal filed
+TSK-000077,CLM-003080,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,Completed,2026-06-20,Rule 5 — denied 158 days ago with no appeal filed
+TSK-000078,CLM-003084,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 448 days ago with no appeal filed
+TSK-000079,CLM-003112,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Completed,2026-06-30,Rule 5 — denied 42 days ago with no appeal filed
+TSK-000080,CLM-003134,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Open,,Rule 5 — denied 184 days ago with no appeal filed
+TSK-000081,CLM-003146,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 306 days ago with no appeal filed
+TSK-000082,CLM-003157,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 359 days ago with no appeal filed
+TSK-000083,CLM-003349,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,In Progress,,Rule 5 — denied 350 days ago with no appeal filed
+TSK-000084,CLM-003364,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Open,,Rule 5 — denied 472 days ago with no appeal filed
+TSK-000085,CLM-003410,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,Cancelled,,Rule 5 — denied 199 days ago with no appeal filed
+TSK-000086,CLM-003428,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Open,,Rule 5 — denied 438 days ago with no appeal filed
+TSK-000087,CLM-003429,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Completed,2026-06-30,Rule 5 — denied 113 days ago with no appeal filed
+TSK-000088,CLM-003440,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Open,,Rule 5 — denied 339 days ago with no appeal filed
+TSK-000089,CLM-003446,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Open,,Rule 5 — denied 245 days ago with no appeal filed
+TSK-000090,CLM-003487,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 285 days ago with no appeal filed
+TSK-000091,CLM-003506,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-30,Rule 5 — denied 439 days ago with no appeal filed
+TSK-000092,CLM-003517,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,In Progress,,Rule 5 — denied 447 days ago with no appeal filed
+TSK-000093,CLM-003657,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,In Progress,,Rule 5 — denied 404 days ago with no appeal filed
+TSK-000094,CLM-003770,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 97 days ago with no appeal filed
+TSK-000095,CLM-003777,Appeal deadline approaching,Urgent,Appeals Team,2026-06-17,2026-06-19,Completed,2026-06-19,Rule 5 — denied 497 days ago with no appeal filed
+TSK-000096,CLM-003830,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Open,,Rule 5 — denied 112 days ago with no appeal filed
+TSK-000097,CLM-003847,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 68 days ago with no appeal filed
+TSK-000098,CLM-003856,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Open,,Rule 5 — denied 121 days ago with no appeal filed
+TSK-000099,CLM-003859,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 275 days ago with no appeal filed
+TSK-000100,CLM-003896,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Completed,2026-06-26,Rule 5 — denied 47 days ago with no appeal filed
+TSK-000101,CLM-003942,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Completed,2026-06-30,Rule 5 — denied 489 days ago with no appeal filed
+TSK-000102,CLM-003973,Appeal deadline approaching,Urgent,Appeals Team,2026-06-17,2026-06-19,Open,,Rule 5 — denied 467 days ago with no appeal filed
+TSK-000103,CLM-004017,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 458 days ago with no appeal filed
+TSK-000104,CLM-004028,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Completed,2026-06-30,Rule 5 — denied 268 days ago with no appeal filed
+TSK-000105,CLM-004029,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Open,,Rule 5 — denied 41 days ago with no appeal filed
+TSK-000106,CLM-004039,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Open,,Rule 5 — denied 483 days ago with no appeal filed
+TSK-000107,CLM-004043,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Completed,2026-06-12,Rule 5 — denied 88 days ago with no appeal filed
+TSK-000108,CLM-004047,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,Completed,2026-06-20,Rule 5 — denied 125 days ago with no appeal filed
+TSK-000109,CLM-004074,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Completed,2026-06-21,Rule 5 — denied 176 days ago with no appeal filed
+TSK-000110,CLM-004089,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,In Progress,,Rule 5 — denied 93 days ago with no appeal filed
+TSK-000111,CLM-004131,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Open,,Rule 5 — denied 54 days ago with no appeal filed
+TSK-000112,CLM-004179,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,Open,,Rule 5 — denied 271 days ago with no appeal filed
+TSK-000113,CLM-004244,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Completed,2026-06-14,Rule 5 — denied 184 days ago with no appeal filed
+TSK-000114,CLM-004329,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Open,,Rule 5 — denied 32 days ago with no appeal filed
+TSK-000115,CLM-004338,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-30,Rule 5 — denied 26 days ago with no appeal filed
+TSK-000116,CLM-004362,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 110 days ago with no appeal filed
+TSK-000117,CLM-004364,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 42 days ago with no appeal filed
+TSK-000118,CLM-004389,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Open,,Rule 5 — denied 261 days ago with no appeal filed
+TSK-000119,CLM-004395,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 128 days ago with no appeal filed
+TSK-000120,CLM-004405,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,In Progress,,Rule 5 — denied 120 days ago with no appeal filed
+TSK-000121,CLM-004409,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Completed,2026-06-23,Rule 5 — denied 168 days ago with no appeal filed
+TSK-000122,CLM-004471,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,In Progress,,Rule 5 — denied 500 days ago with no appeal filed
+TSK-000123,CLM-004493,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Completed,2026-06-16,Rule 5 — denied 186 days ago with no appeal filed
+TSK-000124,CLM-004506,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 426 days ago with no appeal filed
+TSK-000125,CLM-004576,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Completed,2026-06-20,Rule 5 — denied 61 days ago with no appeal filed
+TSK-000126,CLM-004590,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Completed,2026-06-16,Rule 5 — denied 60 days ago with no appeal filed
+TSK-000127,CLM-004637,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 386 days ago with no appeal filed
+TSK-000128,CLM-004642,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 442 days ago with no appeal filed
+TSK-000129,CLM-004650,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,Completed,2026-06-29,Rule 5 — denied 514 days ago with no appeal filed
+TSK-000130,CLM-004662,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,In Progress,,Rule 5 — denied 103 days ago with no appeal filed
+TSK-000131,CLM-004683,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,In Progress,,Rule 5 — denied 65 days ago with no appeal filed
+TSK-000132,CLM-004722,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Open,,Rule 5 — denied 74 days ago with no appeal filed
+TSK-000133,CLM-004724,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,In Progress,,Rule 5 — denied 40 days ago with no appeal filed
+TSK-000134,CLM-004750,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 342 days ago with no appeal filed
+TSK-000135,CLM-004756,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 126 days ago with no appeal filed
+TSK-000136,CLM-004813,Appeal deadline approaching,Urgent,Appeals Team,2026-06-17,2026-06-19,Open,,Rule 5 — denied 418 days ago with no appeal filed
+TSK-000137,CLM-004822,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 27 days ago with no appeal filed
+TSK-000138,CLM-004870,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Open,,Rule 5 — denied 49 days ago with no appeal filed
+TSK-000139,CLM-004911,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Open,,Rule 5 — denied 55 days ago with no appeal filed
+TSK-000140,CLM-004918,Appeal deadline approaching,Urgent,Appeals Team,2026-06-16,2026-06-18,In Progress,,Rule 5 — denied 259 days ago with no appeal filed
+TSK-000141,CLM-004983,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 513 days ago with no appeal filed
+TSK-000142,CLM-005091,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Open,,Rule 5 — denied 369 days ago with no appeal filed
+TSK-000143,CLM-005107,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 369 days ago with no appeal filed
+TSK-000144,CLM-005122,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 203 days ago with no appeal filed
+TSK-000145,CLM-005219,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Open,,Rule 5 — denied 110 days ago with no appeal filed
+TSK-000146,CLM-005235,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Open,,Rule 5 — denied 313 days ago with no appeal filed
+TSK-000147,CLM-005239,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Completed,2026-06-16,Rule 5 — denied 466 days ago with no appeal filed
+TSK-000148,CLM-005322,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Completed,2026-06-23,Rule 5 — denied 46 days ago with no appeal filed
+TSK-000149,CLM-005348,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Cancelled,,Rule 5 — denied 23 days ago with no appeal filed
+TSK-000150,CLM-005369,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Open,,Rule 5 — denied 420 days ago with no appeal filed
+TSK-000151,CLM-005397,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Open,,Rule 5 — denied 459 days ago with no appeal filed
+TSK-000152,CLM-005408,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,In Progress,,Rule 5 — denied 147 days ago with no appeal filed
+TSK-000153,CLM-005416,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Open,,Rule 5 — denied 501 days ago with no appeal filed
+TSK-000154,CLM-005436,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-28,Rule 5 — denied 110 days ago with no appeal filed
+TSK-000155,CLM-005437,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,In Progress,,Rule 5 — denied 323 days ago with no appeal filed
+TSK-000156,CLM-005440,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,In Progress,,Rule 5 — denied 380 days ago with no appeal filed
+TSK-000157,CLM-005519,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,In Progress,,Rule 5 — denied 347 days ago with no appeal filed
+TSK-000158,CLM-005523,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,In Progress,,Rule 5 — denied 119 days ago with no appeal filed
+TSK-000159,CLM-005599,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,In Progress,,Rule 5 — denied 307 days ago with no appeal filed
+TSK-000160,CLM-005657,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Completed,2026-06-13,Rule 5 — denied 152 days ago with no appeal filed
+TSK-000161,CLM-005721,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 323 days ago with no appeal filed
+TSK-000162,CLM-005753,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,In Progress,,Rule 5 — denied 46 days ago with no appeal filed
+TSK-000163,CLM-005757,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Completed,2026-06-25,Rule 5 — denied 464 days ago with no appeal filed
+TSK-000164,CLM-005796,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 504 days ago with no appeal filed
+TSK-000165,CLM-005804,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,In Progress,,Rule 5 — denied 377 days ago with no appeal filed
+TSK-000166,CLM-005823,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 119 days ago with no appeal filed
+TSK-000167,CLM-005825,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 261 days ago with no appeal filed
+TSK-000168,CLM-005937,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 109 days ago with no appeal filed
+TSK-000169,CLM-005958,Appeal deadline approaching,Urgent,Appeals Team,2026-06-17,2026-06-19,Open,,Rule 5 — denied 489 days ago with no appeal filed
+TSK-000170,CLM-005964,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Open,,Rule 5 — denied 30 days ago with no appeal filed
+TSK-000171,CLM-000125,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Completed,2026-06-25,"Rule 2 — $2,230.93 outstanding at 382 days"
+TSK-000172,CLM-000188,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-27,2026-07-02,Open,,"Rule 2 — $3,345.56 outstanding at 230 days"
+TSK-000173,CLM-000193,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-13,2026-06-18,Open,,"Rule 2 — $4,576.83 outstanding at 189 days"
+TSK-000174,CLM-000285,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Completed,2026-06-22,"Rule 2 — $2,086.67 outstanding at 394 days"
+TSK-000175,CLM-000313,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Completed,2026-06-27,"Rule 2 — $1,234.78 outstanding at 129 days"
+TSK-000176,CLM-000471,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $3,214.66 outstanding at 123 days"
+TSK-000177,CLM-000500,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Completed,2026-06-18,"Rule 2 — $1,446.70 outstanding at 404 days"
+TSK-000178,CLM-000506,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $1,213.11 outstanding at 511 days"
+TSK-000179,CLM-000565,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-16,2026-06-21,Open,,"Rule 2 — $3,449.70 outstanding at 96 days"
+TSK-000180,CLM-000597,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,In Progress,,"Rule 2 — $2,217.15 outstanding at 514 days"
+TSK-000181,CLM-000599,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $1,027.41 outstanding at 109 days"
+TSK-000182,CLM-000655,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Open,,"Rule 2 — $1,078.13 outstanding at 97 days"
+TSK-000183,CLM-000711,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,Completed,2026-06-25,"Rule 2 — $10,929.03 outstanding at 443 days"
+TSK-000184,CLM-000711,Review high-value denied claim,High,Denials Team,2026-06-12,2026-06-17,Open,,"Rule 1 — denied amount $10,929.03 exceeds $5,000 threshold"
+TSK-000185,CLM-000801,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Open,,"Rule 2 — $4,941.91 outstanding at 339 days"
+TSK-000186,CLM-000809,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Open,,"Rule 2 — $1,155.02 outstanding at 465 days"
+TSK-000187,CLM-000814,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-25,2026-06-30,Completed,2026-06-30,"Rule 2 — $1,545.39 outstanding at 229 days"
+TSK-000188,CLM-000845,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,In Progress,,"Rule 2 — $2,603.00 outstanding at 383 days"
+TSK-000189,CLM-000852,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $2,296.37 outstanding at 279 days"
+TSK-000190,CLM-000890,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $1,113.75 outstanding at 430 days"
+TSK-000191,CLM-000978,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-23,2026-06-28,Open,,"Rule 2 — $1,070.76 outstanding at 104 days"
+TSK-000192,CLM-001038,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $1,830.77 outstanding at 107 days"
+TSK-000193,CLM-001105,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Completed,2026-06-23,"Rule 2 — $3,454.83 outstanding at 315 days"
+TSK-000194,CLM-001105,Review high-value denied claim,High,Denials Team,2026-06-21,2026-06-26,Open,,"Rule 1 — denied amount $6,232.44 exceeds $5,000 threshold"
+TSK-000195,CLM-001107,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,Open,,"Rule 2 — $1,256.45 outstanding at 138 days"
+TSK-000196,CLM-001125,Review high-value denied claim,High,Denials Team,2026-06-10,2026-06-15,In Progress,,"Rule 1 — denied amount $8,007.74 exceeds $5,000 threshold"
+TSK-000197,CLM-001151,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Open,,"Rule 2 — $2,342.11 outstanding at 130 days"
+TSK-000198,CLM-001169,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Completed,2026-06-28,"Rule 2 — $1,067.78 outstanding at 493 days"
+TSK-000199,CLM-001210,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $1,975.16 outstanding at 418 days"
+TSK-000200,CLM-001361,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Open,,"Rule 2 — $2,687.94 outstanding at 165 days"
+TSK-000201,CLM-001362,Review high-value denied claim,High,Denials Team,2026-06-16,2026-06-21,In Progress,,"Rule 1 — denied amount $17,384.54 exceeds $5,000 threshold"
+TSK-000202,CLM-001421,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,In Progress,,"Rule 2 — $1,514.27 outstanding at 465 days"
+TSK-000203,CLM-001471,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,Open,,"Rule 2 — $1,126.18 outstanding at 124 days"
+TSK-000204,CLM-001529,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,Completed,2026-06-23,"Rule 2 — $2,248.76 outstanding at 325 days"
+TSK-000205,CLM-001573,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Completed,2026-06-16,"Rule 2 — $10,938.23 outstanding at 141 days"
+TSK-000206,CLM-001573,Review high-value denied claim,High,Denials Team,2026-06-12,2026-06-17,In Progress,,"Rule 1 — denied amount $10,938.23 exceeds $5,000 threshold"
+TSK-000207,CLM-001698,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Open,,"Rule 2 — $3,805.13 outstanding at 247 days"
+TSK-000208,CLM-001726,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,Open,,"Rule 2 — $1,297.32 outstanding at 142 days"
+TSK-000209,CLM-001733,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $6,607.24 outstanding at 409 days"
+TSK-000210,CLM-001733,Review high-value denied claim,High,Denials Team,2026-06-17,2026-06-22,Open,,"Rule 1 — denied amount $6,607.24 exceeds $5,000 threshold"
+TSK-000211,CLM-001802,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-28,2026-07-03,Open,,"Rule 2 — $2,392.51 outstanding at 512 days"
+TSK-000212,CLM-001810,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,Cancelled,,"Rule 2 — $1,050.99 outstanding at 172 days"
+TSK-000213,CLM-001820,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-10,2026-06-15,Open,,"Rule 2 — $2,412.06 outstanding at 369 days"
+TSK-000214,CLM-001838,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-28,2026-07-03,Cancelled,,"Rule 2 — $13,093.66 outstanding at 369 days"
+TSK-000215,CLM-001838,Review high-value denied claim,High,Denials Team,2026-06-28,2026-07-03,Cancelled,,"Rule 1 — denied amount $13,093.66 exceeds $5,000 threshold"
+TSK-000216,CLM-001862,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-22,2026-06-27,Open,,"Rule 2 — $2,085.77 outstanding at 472 days"
+TSK-000217,CLM-001869,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-25,2026-06-30,Open,,"Rule 2 — $1,361.58 outstanding at 203 days"
+TSK-000218,CLM-001922,Review high-value denied claim,High,Denials Team,2026-06-17,2026-06-22,Open,,"Rule 1 — denied amount $16,781.86 exceeds $5,000 threshold"
+TSK-000219,CLM-001923,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $3,668.37 outstanding at 102 days"
+TSK-000220,CLM-001992,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-27,2026-07-02,In Progress,,"Rule 2 — $6,658.25 outstanding at 154 days"
+TSK-000221,CLM-001992,Review high-value denied claim,High,Denials Team,2026-06-30,2026-07-05,Open,,"Rule 1 — denied amount $6,658.25 exceeds $5,000 threshold"
+TSK-000222,CLM-001993,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $1,601.56 outstanding at 177 days"
+TSK-000223,CLM-001995,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Completed,2026-06-19,"Rule 2 — $3,531.46 outstanding at 479 days"
+TSK-000224,CLM-002009,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Open,,"Rule 2 — $1,264.16 outstanding at 360 days"
+TSK-000225,CLM-002049,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,In Progress,,"Rule 2 — $1,173.60 outstanding at 274 days"
+TSK-000226,CLM-002079,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-12,2026-06-17,Open,,"Rule 2 — $2,267.41 outstanding at 531 days"
+TSK-000227,CLM-002151,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-13,2026-06-18,Open,,"Rule 2 — $4,468.64 outstanding at 376 days"
+TSK-000228,CLM-002360,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $1,286.51 outstanding at 293 days"
+TSK-000229,CLM-002434,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,Completed,2026-06-30,"Rule 2 — $1,207.58 outstanding at 144 days"
+TSK-000230,CLM-002458,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Completed,2026-06-30,"Rule 2 — $4,614.15 outstanding at 306 days"
+TSK-000231,CLM-002496,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,Open,,"Rule 2 — $15,819.69 outstanding at 527 days"
+TSK-000232,CLM-002496,Review high-value denied claim,High,Denials Team,2026-06-13,2026-06-18,In Progress,,"Rule 1 — denied amount $15,819.69 exceeds $5,000 threshold"
+TSK-000233,CLM-002542,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,Completed,2026-06-26,"Rule 2 — $5,080.15 outstanding at 95 days"
+TSK-000234,CLM-002542,Review high-value denied claim,High,Denials Team,2026-06-24,2026-06-29,Open,,"Rule 1 — denied amount $5,080.15 exceeds $5,000 threshold"
+TSK-000235,CLM-002607,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-22,2026-06-27,Completed,2026-06-29,"Rule 2 — $1,794.77 outstanding at 140 days"
+TSK-000236,CLM-002682,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $1,102.73 outstanding at 110 days"
+TSK-000237,CLM-002690,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-28,2026-07-03,Open,,"Rule 2 — $4,635.06 outstanding at 481 days"
+TSK-000238,CLM-002704,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,Open,,"Rule 2 — $1,057.49 outstanding at 336 days"
+TSK-000239,CLM-002725,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-16,2026-06-21,Open,,"Rule 2 — $9,826.94 outstanding at 117 days"
+TSK-000240,CLM-002739,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,In Progress,,"Rule 2 — $1,646.57 outstanding at 487 days"
+TSK-000241,CLM-002757,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-22,2026-06-27,Completed,2026-06-29,"Rule 2 — $3,043.52 outstanding at 91 days"
+TSK-000242,CLM-002787,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Completed,2026-06-26,"Rule 2 — $1,577.30 outstanding at 122 days"
+TSK-000243,CLM-002850,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,Open,,"Rule 2 — $2,894.66 outstanding at 391 days"
+TSK-000244,CLM-002953,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $1,449.02 outstanding at 482 days"
+TSK-000245,CLM-002989,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,In Progress,,"Rule 2 — $1,422.03 outstanding at 263 days"
+TSK-000246,CLM-003017,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $1,147.42 outstanding at 302 days"
+TSK-000247,CLM-003134,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-23,2026-06-28,Open,,"Rule 2 — $3,214.30 outstanding at 206 days"
+TSK-000248,CLM-003146,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,Open,,"Rule 2 — $3,691.72 outstanding at 337 days"
+TSK-000249,CLM-003154,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,In Progress,,"Rule 2 — $2,297.50 outstanding at 379 days"
+TSK-000250,CLM-003181,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-26,2026-07-01,Open,,"Rule 2 — $1,340.77 outstanding at 484 days"
+TSK-000251,CLM-003212,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,Open,,"Rule 2 — $1,765.34 outstanding at 103 days"
+TSK-000252,CLM-003313,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-16,2026-06-21,Open,,"Rule 2 — $2,922.89 outstanding at 107 days"
+TSK-000253,CLM-003328,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-10,2026-06-15,Open,,"Rule 2 — $1,032.42 outstanding at 301 days"
+TSK-000254,CLM-003410,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,In Progress,,"Rule 2 — $2,025.04 outstanding at 219 days"
+TSK-000255,CLM-003506,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-12,2026-06-17,Open,,"Rule 2 — $10,301.40 outstanding at 476 days"
+TSK-000256,CLM-003506,Review high-value denied claim,High,Denials Team,2026-06-30,2026-07-05,Open,,"Rule 1 — denied amount $10,301.40 exceeds $5,000 threshold"
+TSK-000257,CLM-003642,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Completed,2026-06-24,"Rule 2 — $1,094.22 outstanding at 155 days"
+TSK-000258,CLM-003734,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,In Progress,,"Rule 2 — $6,471.81 outstanding at 112 days"
+TSK-000259,CLM-003740,Review high-value denied claim,High,Denials Team,2026-06-17,2026-06-22,Open,,"Rule 1 — denied amount $10,804.12 exceeds $5,000 threshold"
+TSK-000260,CLM-003770,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,In Progress,,"Rule 2 — $2,686.37 outstanding at 109 days"
+TSK-000261,CLM-003777,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-12,2026-06-17,Completed,2026-06-15,"Rule 2 — $3,035.52 outstanding at 523 days"
+TSK-000262,CLM-003799,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,Open,,"Rule 2 — $12,133.14 outstanding at 100 days"
+TSK-000263,CLM-003799,Review high-value denied claim,High,Denials Team,2026-06-10,2026-06-15,In Progress,,"Rule 1 — denied amount $12,133.14 exceeds $5,000 threshold"
+TSK-000264,CLM-003806,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-23,2026-06-28,Completed,2026-06-26,"Rule 2 — $1,267.14 outstanding at 316 days"
+TSK-000265,CLM-003826,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,In Progress,,"Rule 2 — $3,866.53 outstanding at 270 days"
+TSK-000266,CLM-003890,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-10,2026-06-15,Open,,"Rule 2 — $1,670.51 outstanding at 268 days"
+TSK-000267,CLM-003896,Review high-value denied claim,High,Denials Team,2026-06-11,2026-06-16,Open,,"Rule 1 — denied amount $14,792.87 exceeds $5,000 threshold"
+TSK-000268,CLM-003985,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-16,2026-06-21,In Progress,,"Rule 2 — $2,880.42 outstanding at 377 days"
+TSK-000269,CLM-004039,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-30,2026-07-05,Open,,"Rule 2 — $1,211.70 outstanding at 498 days"
+TSK-000270,CLM-004041,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Open,,"Rule 2 — $1,290.98 outstanding at 449 days"
+TSK-000271,CLM-004047,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-17,2026-06-22,Open,,"Rule 2 — $1,147.43 outstanding at 160 days"
+TSK-000272,CLM-004048,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-13,2026-06-18,Open,,"Rule 2 — $1,169.35 outstanding at 351 days"
+TSK-000273,CLM-004129,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-21,2026-06-26,Open,,"Rule 2 — $1,273.93 outstanding at 489 days"
+TSK-000274,CLM-004136,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,Open,,"Rule 2 — $1,483.60 outstanding at 113 days"
+TSK-000275,CLM-004180,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-14,2026-06-19,Open,,"Rule 2 — $7,321.88 outstanding at 274 days"
+TSK-000276,CLM-004180,Review high-value denied claim,High,Denials Team,2026-06-16,2026-06-21,Open,,"Rule 1 — denied amount $7,321.88 exceeds $5,000 threshold"
+TSK-000277,CLM-004213,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Open,,"Rule 2 — $1,021.51 outstanding at 353 days"
+TSK-000278,CLM-004245,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Open,,"Rule 2 — $1,530.64 outstanding at 427 days"
+TSK-000279,CLM-004362,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-10,2026-06-15,Completed,2026-06-16,"Rule 2 — $2,119.22 outstanding at 127 days"
+TSK-000280,CLM-004405,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,In Progress,,"Rule 2 — $2,286.16 outstanding at 159 days"
+TSK-000281,CLM-004471,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-26,2026-07-01,Open,,"Rule 2 — $1,058.88 outstanding at 520 days"
+TSK-000282,CLM-004472,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Open,,"Rule 2 — $2,967.00 outstanding at 451 days"
+TSK-000283,CLM-004494,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Completed,2026-06-30,"Rule 2 — $1,133.79 outstanding at 435 days"
+TSK-000284,CLM-004595,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,In Progress,,"Rule 2 — $1,004.10 outstanding at 337 days"
+TSK-000285,CLM-004637,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-26,2026-07-01,Open,,"Rule 2 — $5,506.98 outstanding at 421 days"
+TSK-000286,CLM-004637,Review high-value denied claim,High,Denials Team,2026-06-22,2026-06-27,Open,,"Rule 1 — denied amount $5,506.98 exceeds $5,000 threshold"
+TSK-000287,CLM-004650,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Open,,"Rule 2 — $2,176.58 outstanding at 538 days"
+TSK-000288,CLM-004662,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Completed,2026-06-19,"Rule 2 — $1,155.93 outstanding at 117 days"
+TSK-000289,CLM-004665,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-23,2026-06-28,Completed,2026-06-27,"Rule 2 — $4,391.41 outstanding at 176 days"
+TSK-000290,CLM-004722,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-16,2026-06-21,In Progress,,"Rule 2 — $2,484.31 outstanding at 102 days"
+TSK-000291,CLM-004724,Review high-value denied claim,High,Denials Team,2026-06-14,2026-06-19,Open,,"Rule 1 — denied amount $19,112.40 exceeds $5,000 threshold"
+TSK-000292,CLM-004788,Review high-value denied claim,High,Denials Team,2026-06-26,2026-07-01,Completed,2026-06-30,"Rule 1 — denied amount $6,400.79 exceeds $5,000 threshold"
+TSK-000293,CLM-004931,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-27,2026-07-02,Completed,2026-06-30,"Rule 2 — $1,885.43 outstanding at 204 days"
+TSK-000294,CLM-004968,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-12,2026-06-17,Completed,2026-06-21,"Rule 2 — $1,179.84 outstanding at 98 days"
+TSK-000295,CLM-004974,Review high-value denied claim,High,Denials Team,2026-06-12,2026-06-17,Completed,2026-06-18,"Rule 1 — denied amount $7,015.30 exceeds $5,000 threshold"
+TSK-000296,CLM-005026,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-10,2026-06-15,Completed,2026-06-19,"Rule 2 — $2,812.40 outstanding at 423 days"
+TSK-000297,CLM-005047,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Completed,2026-06-28,"Rule 2 — $1,412.40 outstanding at 180 days"
+TSK-000298,CLM-005051,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Open,,"Rule 2 — $4,929.48 outstanding at 274 days"
+TSK-000299,CLM-005051,Review high-value denied claim,High,Denials Team,2026-06-18,2026-06-23,Completed,2026-06-21,"Rule 1 — denied amount $14,531.72 exceeds $5,000 threshold"
+TSK-000300,CLM-005058,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,In Progress,,"Rule 2 — $2,640.06 outstanding at 455 days"
+TSK-000301,CLM-005084,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-25,2026-06-30,Completed,2026-06-29,"Rule 2 — $10,514.75 outstanding at 308 days"
+TSK-000302,CLM-005084,Review high-value denied claim,High,Denials Team,2026-06-18,2026-06-23,Completed,2026-06-19,"Rule 1 — denied amount $10,514.75 exceeds $5,000 threshold"
+TSK-000303,CLM-005107,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Open,,"Rule 2 — $1,232.95 outstanding at 397 days"
+TSK-000304,CLM-005201,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-13,2026-06-18,Open,,"Rule 2 — $11,052.72 outstanding at 120 days"
+TSK-000305,CLM-005201,Review high-value denied claim,High,Denials Team,2026-06-27,2026-07-02,Open,,"Rule 1 — denied amount $11,052.72 exceeds $5,000 threshold"
+TSK-000306,CLM-005251,Review high-value denied claim,High,Denials Team,2026-06-09,2026-06-14,Completed,2026-06-19,"Rule 1 — denied amount $29,270.16 exceeds $5,000 threshold"
+TSK-000307,CLM-005258,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-09,2026-06-14,Completed,2026-06-14,"Rule 2 — $2,333.82 outstanding at 315 days"
+TSK-000308,CLM-005307,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,Open,,"Rule 2 — $2,288.42 outstanding at 499 days"
+TSK-000309,CLM-005394,Review high-value denied claim,High,Denials Team,2026-06-27,2026-07-02,Open,,"Rule 1 — denied amount $8,309.44 exceeds $5,000 threshold"
+TSK-000310,CLM-005397,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,Open,,"Rule 2 — $1,114.18 outstanding at 471 days"
+TSK-000311,CLM-005416,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-19,2026-06-24,In Progress,,"Rule 2 — $3,413.88 outstanding at 530 days"
+TSK-000312,CLM-005436,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-23,2026-06-28,Open,,"Rule 2 — $1,108.35 outstanding at 136 days"
+TSK-000313,CLM-005519,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-11,2026-06-16,In Progress,,"Rule 2 — $10,937.90 outstanding at 377 days"
+TSK-000314,CLM-005519,Review high-value denied claim,High,Denials Team,2026-06-10,2026-06-15,Open,,"Rule 1 — denied amount $10,937.90 exceeds $5,000 threshold"
+TSK-000315,CLM-005554,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Completed,2026-06-30,"Rule 2 — $1,406.97 outstanding at 451 days"
+TSK-000316,CLM-005594,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $3,381.64 outstanding at 119 days"
+TSK-000317,CLM-005691,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-20,2026-06-25,Completed,2026-06-23,"Rule 2 — $2,972.54 outstanding at 398 days"
+TSK-000318,CLM-005757,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-12,2026-06-17,Open,,"Rule 2 — $10,344.27 outstanding at 497 days"
+TSK-000319,CLM-005757,Review high-value denied claim,High,Denials Team,2026-06-22,2026-06-27,Open,,"Rule 1 — denied amount $10,344.27 exceeds $5,000 threshold"
+TSK-000320,CLM-005796,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-27,2026-07-02,Open,,"Rule 2 — $1,054.79 outstanding at 523 days"
+TSK-000321,CLM-005804,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-29,2026-07-04,Completed,2026-06-30,"Rule 2 — $7,363.18 outstanding at 396 days"
+TSK-000322,CLM-005804,Review high-value denied claim,High,Denials Team,2026-06-11,2026-06-16,Cancelled,,"Rule 1 — denied amount $7,363.18 exceeds $5,000 threshold"
+TSK-000323,CLM-005852,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-24,2026-06-29,Open,,"Rule 2 — $1,878.12 outstanding at 198 days"
+TSK-000324,CLM-005866,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-15,2026-06-20,Open,,"Rule 2 — $1,996.65 outstanding at 278 days"
+TSK-000325,CLM-005869,Follow up on aging A/R claim,High,AR Follow-up Team,2026-06-18,2026-06-23,In Progress,,"Rule 2 — $2,927.87 outstanding at 421 days"
+TSK-000326,CLM-000031,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-10,2026-06-20,Completed,2026-06-20,"Rule 2 — $2,279.18 outstanding at 83 days"
+TSK-000327,CLM-000122,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-26,2026-07-06,Open,,"Rule 2 — $2,063.42 outstanding at 63 days"
+TSK-000328,CLM-000158,Request missing documentation,Medium,Documentation Team,2026-06-17,2026-06-27,Open,,Rule 3 — denial category is Missing documentation
+TSK-000329,CLM-000161,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000330,CLM-000188,Request missing documentation,Medium,Documentation Team,2026-06-24,2026-07-04,Open,,Rule 3 — denial category is Missing documentation
+TSK-000331,CLM-000295,Request missing documentation,Medium,Documentation Team,2026-06-10,2026-06-20,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000332,CLM-000471,Request missing documentation,Medium,Documentation Team,2026-06-09,2026-06-19,Open,,Rule 3 — denial category is Missing documentation
+TSK-000333,CLM-000489,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-28,2026-07-08,In Progress,,"Rule 2 — $1,099.44 outstanding at 87 days"
+TSK-000334,CLM-000648,Request missing documentation,Medium,Documentation Team,2026-06-17,2026-06-27,Open,,Rule 3 — denial category is Missing documentation
+TSK-000335,CLM-000655,Request missing documentation,Medium,Documentation Team,2026-06-19,2026-06-29,Completed,2026-06-21,Rule 3 — denial category is Missing documentation
+TSK-000336,CLM-000689,Request missing documentation,Medium,Documentation Team,2026-06-20,2026-06-30,Open,,Rule 3 — denial category is Missing documentation
+TSK-000337,CLM-000761,Request missing documentation,Medium,Documentation Team,2026-06-27,2026-07-07,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000338,CLM-000787,Request missing documentation,Medium,Documentation Team,2026-06-13,2026-06-23,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000339,CLM-000801,Request missing documentation,Medium,Documentation Team,2026-06-12,2026-06-22,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000340,CLM-000852,Request missing documentation,Medium,Documentation Team,2026-06-15,2026-06-25,Completed,2026-06-16,Rule 3 — denial category is Missing documentation
+TSK-000341,CLM-000860,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-20,2026-06-30,Open,,"Rule 2 — $2,407.80 outstanding at 71 days"
+TSK-000342,CLM-000865,Request missing documentation,Medium,Documentation Team,2026-06-09,2026-06-19,Completed,2026-06-14,Rule 3 — denial category is Missing documentation
+TSK-000343,CLM-000937,Request missing documentation,Medium,Documentation Team,2026-06-12,2026-06-22,Open,,Rule 3 — denial category is Missing documentation
+TSK-000344,CLM-001002,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Open,,Rule 3 — denial category is Missing documentation
+TSK-000345,CLM-001022,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Open,,Rule 3 — denial category is Missing documentation
+TSK-000346,CLM-001105,Request missing documentation,Medium,Documentation Team,2026-06-15,2026-06-25,Open,,Rule 3 — denial category is Missing documentation
+TSK-000347,CLM-001161,Request missing documentation,Medium,Documentation Team,2026-06-17,2026-06-27,Open,,Rule 3 — denial category is Missing documentation
+TSK-000348,CLM-001381,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000349,CLM-001586,Request missing documentation,Medium,Documentation Team,2026-06-10,2026-06-20,Completed,2026-06-20,Rule 3 — denial category is Missing documentation
+TSK-000350,CLM-001712,Request missing documentation,Medium,Documentation Team,2026-06-10,2026-06-20,Open,,Rule 3 — denial category is Missing documentation
+TSK-000351,CLM-001828,Request missing documentation,Medium,Documentation Team,2026-06-12,2026-06-22,Completed,2026-06-16,Rule 3 — denial category is Missing documentation
+TSK-000352,CLM-001922,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-23,2026-07-03,Completed,2026-06-24,"Rule 2 — $16,781.86 outstanding at 63 days"
+TSK-000353,CLM-001985,Request missing documentation,Medium,Documentation Team,2026-06-11,2026-06-21,Completed,2026-06-25,Rule 3 — denial category is Missing documentation
+TSK-000354,CLM-002022,Request missing documentation,Medium,Documentation Team,2026-06-11,2026-06-21,Open,,Rule 3 — denial category is Missing documentation
+TSK-000355,CLM-002127,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-11,2026-06-21,Open,,"Rule 2 — $10,576.31 outstanding at 76 days"
+TSK-000356,CLM-002157,Request missing documentation,Medium,Documentation Team,2026-06-24,2026-07-04,Cancelled,,Rule 3 — denial category is Missing documentation
+TSK-000357,CLM-002232,Request missing documentation,Medium,Documentation Team,2026-06-12,2026-06-22,Completed,2026-06-23,Rule 3 — denial category is Missing documentation
+TSK-000358,CLM-002411,Request missing documentation,Medium,Documentation Team,2026-06-13,2026-06-23,Open,,Rule 3 — denial category is Missing documentation
+TSK-000359,CLM-002517,Request missing documentation,Medium,Documentation Team,2026-06-25,2026-07-05,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000360,CLM-002539,Request missing documentation,Medium,Documentation Team,2026-06-20,2026-06-30,Open,,Rule 3 — denial category is Missing documentation
+TSK-000361,CLM-002542,Request missing documentation,Medium,Documentation Team,2026-06-25,2026-07-05,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000362,CLM-002557,Request missing documentation,Medium,Documentation Team,2026-06-15,2026-06-25,Open,,Rule 3 — denial category is Missing documentation
+TSK-000363,CLM-002572,Request missing documentation,Medium,Documentation Team,2026-06-18,2026-06-28,Cancelled,,Rule 3 — denial category is Missing documentation
+TSK-000364,CLM-002596,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-16,2026-06-26,Open,,"Rule 2 — $1,295.21 outstanding at 67 days"
+TSK-000365,CLM-002739,Request missing documentation,Medium,Documentation Team,2026-06-27,2026-07-07,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000366,CLM-002858,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-15,2026-06-25,Completed,2026-06-29,"Rule 2 — $1,057.34 outstanding at 79 days"
+TSK-000367,CLM-002866,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Open,,Rule 3 — denial category is Missing documentation
+TSK-000368,CLM-002918,Request missing documentation,Medium,Documentation Team,2026-06-24,2026-07-04,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000369,CLM-002933,Request missing documentation,Medium,Documentation Team,2026-06-17,2026-06-27,Open,,Rule 3 — denial category is Missing documentation
+TSK-000370,CLM-003002,Request missing documentation,Medium,Documentation Team,2026-06-11,2026-06-21,Open,,Rule 3 — denial category is Missing documentation
+TSK-000371,CLM-003094,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-16,2026-06-26,Open,,"Rule 2 — $1,581.59 outstanding at 66 days"
+TSK-000372,CLM-003134,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Open,,Rule 3 — denial category is Missing documentation
+TSK-000373,CLM-003386,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Completed,2026-06-24,Rule 3 — denial category is Missing documentation
+TSK-000374,CLM-003400,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-24,2026-07-04,In Progress,,"Rule 2 — $1,563.68 outstanding at 66 days"
+TSK-000375,CLM-003400,Request missing documentation,Medium,Documentation Team,2026-06-15,2026-06-25,Open,,Rule 3 — denial category is Missing documentation
+TSK-000376,CLM-003407,Request missing documentation,Medium,Documentation Team,2026-06-30,2026-07-10,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000377,CLM-003410,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000378,CLM-003428,Request missing documentation,Medium,Documentation Team,2026-06-14,2026-06-24,Completed,2026-06-22,Rule 3 — denial category is Missing documentation
+TSK-000379,CLM-003446,Request missing documentation,Medium,Documentation Team,2026-06-16,2026-06-26,Open,,Rule 3 — denial category is Missing documentation
+TSK-000380,CLM-003506,Request missing documentation,Medium,Documentation Team,2026-06-28,2026-07-08,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000381,CLM-003642,Request missing documentation,Medium,Documentation Team,2026-06-18,2026-06-28,Open,,Rule 3 — denial category is Missing documentation
+TSK-000382,CLM-003683,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-23,2026-07-03,Open,,"Rule 2 — $1,624.37 outstanding at 86 days"
+TSK-000383,CLM-003683,Request missing documentation,Medium,Documentation Team,2026-06-09,2026-06-19,Open,,Rule 3 — denial category is Missing documentation
+TSK-000384,CLM-003740,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-14,2026-06-24,Open,,"Rule 2 — $10,804.12 outstanding at 62 days"
+TSK-000385,CLM-003740,Request missing documentation,Medium,Documentation Team,2026-06-30,2026-07-10,Cancelled,,Rule 3 — denial category is Missing documentation
+TSK-000386,CLM-003777,Request missing documentation,Medium,Documentation Team,2026-06-16,2026-06-26,Open,,Rule 3 — denial category is Missing documentation
+TSK-000387,CLM-003847,Request missing documentation,Medium,Documentation Team,2026-06-12,2026-06-22,Open,,Rule 3 — denial category is Missing documentation
+TSK-000388,CLM-003896,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-25,2026-07-05,Cancelled,,"Rule 2 — $14,792.87 outstanding at 61 days"
+TSK-000389,CLM-003896,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Open,,Rule 3 — denial category is Missing documentation
+TSK-000390,CLM-004047,Request missing documentation,Medium,Documentation Team,2026-06-20,2026-06-30,Open,,Rule 3 — denial category is Missing documentation
+TSK-000391,CLM-004048,Request missing documentation,Medium,Documentation Team,2026-06-09,2026-06-19,Completed,2026-06-18,Rule 3 — denial category is Missing documentation
+TSK-000392,CLM-004089,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Open,,Rule 3 — denial category is Missing documentation
+TSK-000393,CLM-004191,Request missing documentation,Medium,Documentation Team,2026-06-20,2026-06-30,Open,,Rule 3 — denial category is Missing documentation
+TSK-000394,CLM-004234,Request missing documentation,Medium,Documentation Team,2026-06-23,2026-07-03,Completed,2026-06-28,Rule 3 — denial category is Missing documentation
+TSK-000395,CLM-004242,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-23,2026-07-03,Open,,"Rule 2 — $1,208.86 outstanding at 76 days"
+TSK-000396,CLM-004244,Request missing documentation,Medium,Documentation Team,2026-06-26,2026-07-06,Open,,Rule 3 — denial category is Missing documentation
+TSK-000397,CLM-004302,Request missing documentation,Medium,Documentation Team,2026-06-16,2026-06-26,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000398,CLM-004354,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-28,2026-07-08,Open,,"Rule 2 — $4,818.46 outstanding at 71 days"
+TSK-000399,CLM-004471,Request missing documentation,Medium,Documentation Team,2026-06-13,2026-06-23,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000400,CLM-004472,Request missing documentation,Medium,Documentation Team,2026-06-10,2026-06-20,Completed,2026-06-14,Rule 3 — denial category is Missing documentation
+TSK-000401,CLM-004506,Request missing documentation,Medium,Documentation Team,2026-06-20,2026-06-30,Completed,2026-06-22,Rule 3 — denial category is Missing documentation
+TSK-000402,CLM-004512,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Open,,Rule 3 — denial category is Missing documentation
+TSK-000403,CLM-004570,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Open,,Rule 3 — denial category is Missing documentation
+TSK-000404,CLM-004665,Request missing documentation,Medium,Documentation Team,2026-06-26,2026-07-06,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000405,CLM-004693,Request missing documentation,Medium,Documentation Team,2026-06-28,2026-07-08,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000406,CLM-004722,Request missing documentation,Medium,Documentation Team,2026-06-29,2026-07-09,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000407,CLM-004724,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-25,2026-07-05,In Progress,,"Rule 2 — $19,112.40 outstanding at 68 days"
+TSK-000408,CLM-004788,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-10,2026-06-20,Completed,2026-06-20,"Rule 2 — $2,165.61 outstanding at 89 days"
+TSK-000409,CLM-004870,Request missing documentation,Medium,Documentation Team,2026-06-11,2026-06-21,Open,,Rule 3 — denial category is Missing documentation
+TSK-000410,CLM-004874,Request missing documentation,Medium,Documentation Team,2026-06-29,2026-07-09,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000411,CLM-004911,Request missing documentation,Medium,Documentation Team,2026-06-28,2026-07-08,Open,,Rule 3 — denial category is Missing documentation
+TSK-000412,CLM-004931,Request missing documentation,Medium,Documentation Team,2026-06-27,2026-07-07,Open,,Rule 3 — denial category is Missing documentation
+TSK-000413,CLM-005063,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-12,2026-06-22,Completed,2026-06-20,"Rule 2 — $1,169.58 outstanding at 66 days"
+TSK-000414,CLM-005122,Request missing documentation,Medium,Documentation Team,2026-06-11,2026-06-21,Completed,2026-06-14,Rule 3 — denial category is Missing documentation
+TSK-000415,CLM-005144,Request missing documentation,Medium,Documentation Team,2026-06-26,2026-07-06,Open,,Rule 3 — denial category is Missing documentation
+TSK-000416,CLM-005251,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-13,2026-06-23,Completed,2026-06-23,"Rule 2 — $29,270.16 outstanding at 62 days"
+TSK-000417,CLM-005258,Request missing documentation,Medium,Documentation Team,2026-06-21,2026-07-01,Open,,Rule 3 — denial category is Missing documentation
+TSK-000418,CLM-005307,Request missing documentation,Medium,Documentation Team,2026-06-16,2026-06-26,Completed,2026-06-21,Rule 3 — denial category is Missing documentation
+TSK-000419,CLM-005369,Request missing documentation,Medium,Documentation Team,2026-06-24,2026-07-04,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000420,CLM-005408,Request missing documentation,Medium,Documentation Team,2026-06-30,2026-07-10,Open,,Rule 3 — denial category is Missing documentation
+TSK-000421,CLM-005437,Request missing documentation,Medium,Documentation Team,2026-06-22,2026-07-02,Completed,2026-06-30,Rule 3 — denial category is Missing documentation
+TSK-000422,CLM-005452,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-24,2026-07-04,Open,,"Rule 2 — $1,229.51 outstanding at 88 days"
+TSK-000423,CLM-005452,Request missing documentation,Medium,Documentation Team,2026-06-19,2026-06-29,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000424,CLM-005519,Request missing documentation,Medium,Documentation Team,2026-06-18,2026-06-28,Open,,Rule 3 — denial category is Missing documentation
+TSK-000425,CLM-005567,Request missing documentation,Medium,Documentation Team,2026-06-25,2026-07-05,Open,,Rule 3 — denial category is Missing documentation
+TSK-000426,CLM-005609,Request missing documentation,Medium,Documentation Team,2026-06-29,2026-07-09,Open,,Rule 3 — denial category is Missing documentation
+TSK-000427,CLM-005642,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-11,2026-06-21,Open,,"Rule 2 — $1,018.62 outstanding at 73 days"
+TSK-000428,CLM-005654,Request missing documentation,Medium,Documentation Team,2026-06-21,2026-07-01,In Progress,,Rule 3 — denial category is Missing documentation
+TSK-000429,CLM-005657,Request missing documentation,Medium,Documentation Team,2026-06-10,2026-06-20,Open,,Rule 3 — denial category is Missing documentation
+TSK-000430,CLM-005792,Follow up on aging A/R claim,Medium,AR Follow-up Team,2026-06-23,2026-07-03,Cancelled,,"Rule 2 — $2,375.88 outstanding at 75 days"
+TSK-000431,CLM-005852,Request missing documentation,Medium,Documentation Team,2026-06-13,2026-06-23,Open,,Rule 3 — denial category is Missing documentation
+TSK-000432,CLM-005896,Request missing documentation,Medium,Documentation Team,2026-06-21,2026-07-01,Open,,Rule 3 — denial category is Missing documentation
+TSK-000433,CLM-005985,Request missing documentation,Medium,Documentation Team,2026-06-16,2026-06-26,Open,,Rule 3 — denial category is Missing documentation

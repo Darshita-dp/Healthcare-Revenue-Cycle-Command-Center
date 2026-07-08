@@ -1,0 +1,10 @@
+# Healthcare Revenue Cycle Command Center — Python dependencies
+pandas>=2.1
+numpy>=1.26
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+
+# API (also pinned separately in api/requirements.txt)
+fastapi>=0.110
+uvicorn[standard]>=0.29

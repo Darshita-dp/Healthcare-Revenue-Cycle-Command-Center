@@ -1,0 +1,2 @@
+alert_id,alert_date,alert_type,payer_id,payer_name,payer_type,total_claims,denied_claims,denial_rate_pct,threshold_pct,denied_outstanding_amount,recommended_action
+ALT-0001,2026-06-30,Payer denial rate above threshold,7,State Medicaid Program,Medicaid,864,216,25.0,20.0,114898.74,Escalate to payer relations; schedule joint operating review

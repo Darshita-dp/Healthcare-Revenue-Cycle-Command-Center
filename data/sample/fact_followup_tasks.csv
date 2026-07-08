@@ -1,0 +1,51 @@
+task_id,claim_id,task_type,priority,assigned_team,created_date,due_date,status,closed_date,reason
+TSK-000001,CLM-000044,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 406 days ago with no appeal filed
+TSK-000002,CLM-000074,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,Open,,Rule 5 — denied 45 days ago with no appeal filed
+TSK-000003,CLM-000122,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 47 days ago with no appeal filed
+TSK-000004,CLM-000158,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 42 days ago with no appeal filed
+TSK-000005,CLM-000188,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Completed,2026-06-30,Rule 5 — denied 210 days ago with no appeal filed
+TSK-000006,CLM-000200,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Completed,2026-06-30,Rule 5 — denied 411 days ago with no appeal filed
+TSK-000007,CLM-000253,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Completed,2026-06-29,Rule 5 — denied 25 days ago with no appeal filed
+TSK-000008,CLM-000331,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,In Progress,,Rule 5 — denied 490 days ago with no appeal filed
+TSK-000009,CLM-000444,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,Completed,2026-06-30,Rule 5 — denied 76 days ago with no appeal filed
+TSK-000010,CLM-000526,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 69 days ago with no appeal filed
+TSK-000011,CLM-000655,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 58 days ago with no appeal filed
+TSK-000012,CLM-000711,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 419 days ago with no appeal filed
+TSK-000013,CLM-000761,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Open,,Rule 5 — denied 221 days ago with no appeal filed
+TSK-000014,CLM-000801,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 326 days ago with no appeal filed
+TSK-000015,CLM-000809,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 428 days ago with no appeal filed
+TSK-000016,CLM-000814,Appeal deadline approaching,Urgent,Appeals Team,2026-06-13,2026-06-15,In Progress,,Rule 5 — denied 218 days ago with no appeal filed
+TSK-000017,CLM-000860,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 38 days ago with no appeal filed
+TSK-000018,CLM-000890,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 400 days ago with no appeal filed
+TSK-000019,CLM-000921,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Open,,Rule 5 — denied 99 days ago with no appeal filed
+TSK-000020,CLM-000937,Appeal deadline approaching,Urgent,Appeals Team,2026-06-18,2026-06-20,Open,,Rule 5 — denied 390 days ago with no appeal filed
+TSK-000021,CLM-001002,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Open,,Rule 5 — denied 21 days ago with no appeal filed
+TSK-000022,CLM-001015,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Completed,2026-06-30,Rule 5 — denied 45 days ago with no appeal filed
+TSK-000023,CLM-001022,Appeal deadline approaching,Urgent,Appeals Team,2026-06-20,2026-06-22,Open,,Rule 5 — denied 355 days ago with no appeal filed
+TSK-000024,CLM-001032,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,Completed,2026-06-30,Rule 5 — denied 288 days ago with no appeal filed
+TSK-000025,CLM-001107,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,In Progress,,Rule 5 — denied 117 days ago with no appeal filed
+TSK-000026,CLM-001124,Appeal deadline approaching,Urgent,Appeals Team,2026-06-21,2026-06-23,Completed,2026-06-28,Rule 5 — denied 51 days ago with no appeal filed
+TSK-000027,CLM-001125,Appeal deadline approaching,Urgent,Appeals Team,2026-06-23,2026-06-25,Completed,2026-06-26,Rule 5 — denied 24 days ago with no appeal filed
+TSK-000028,CLM-001135,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Open,,Rule 5 — denied 465 days ago with no appeal filed
+TSK-000029,CLM-001161,Appeal deadline approaching,Urgent,Appeals Team,2026-06-29,2026-07-01,Open,,Rule 5 — denied 488 days ago with no appeal filed
+TSK-000030,CLM-001176,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Completed,2026-06-15,Rule 5 — denied 72 days ago with no appeal filed
+TSK-000031,CLM-001198,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Completed,2026-06-19,Rule 5 — denied 176 days ago with no appeal filed
+TSK-000032,CLM-001249,Appeal deadline approaching,Urgent,Appeals Team,2026-06-27,2026-06-29,In Progress,,Rule 5 — denied 33 days ago with no appeal filed
+TSK-000033,CLM-001351,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 54 days ago with no appeal filed
+TSK-000034,CLM-001361,Appeal deadline approaching,Urgent,Appeals Team,2026-06-22,2026-06-24,Completed,2026-06-27,Rule 5 — denied 147 days ago with no appeal filed
+TSK-000035,CLM-001421,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,Open,,Rule 5 — denied 453 days ago with no appeal filed
+TSK-000036,CLM-001529,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,Open,,Rule 5 — denied 290 days ago with no appeal filed
+TSK-000037,CLM-001573,Appeal deadline approaching,Urgent,Appeals Team,2026-06-28,2026-06-30,Open,,Rule 5 — denied 117 days ago with no appeal filed
+TSK-000038,CLM-001586,Appeal deadline approaching,Urgent,Appeals Team,2026-06-14,2026-06-16,Completed,2026-06-19,Rule 5 — denied 137 days ago with no appeal filed
+TSK-000039,CLM-001648,Appeal deadline approaching,Urgent,Appeals Team,2026-06-15,2026-06-17,Completed,2026-06-19,Rule 5 — denied 130 days ago with no appeal filed
+TSK-000040,CLM-001675,Appeal deadline approaching,Urgent,Appeals Team,2026-06-19,2026-06-21,Completed,2026-06-20,Rule 5 — denied 68 days ago with no appeal filed
+TSK-000041,CLM-001701,Appeal deadline approaching,Urgent,Appeals Team,2026-06-11,2026-06-13,Open,,Rule 5 — denied 484 days ago with no appeal filed
+TSK-000042,CLM-001767,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,In Progress,,Rule 5 — denied 94 days ago with no appeal filed
+TSK-000043,CLM-001802,Appeal deadline approaching,Urgent,Appeals Team,2026-06-09,2026-06-11,Completed,2026-06-15,Rule 5 — denied 476 days ago with no appeal filed
+TSK-000044,CLM-001828,Appeal deadline approaching,Urgent,Appeals Team,2026-06-10,2026-06-12,Completed,2026-06-13,Rule 5 — denied 193 days ago with no appeal filed
+TSK-000045,CLM-001838,Appeal deadline approaching,Urgent,Appeals Team,2026-06-30,2026-07-02,In Progress,,Rule 5 — denied 346 days ago with no appeal filed
+TSK-000046,CLM-001886,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 415 days ago with no appeal filed
+TSK-000047,CLM-001899,Appeal deadline approaching,Urgent,Appeals Team,2026-06-25,2026-06-27,Open,,Rule 5 — denied 178 days ago with no appeal filed
+TSK-000048,CLM-001908,Appeal deadline approaching,Urgent,Appeals Team,2026-06-24,2026-06-26,Open,,Rule 5 — denied 423 days ago with no appeal filed
+TSK-000049,CLM-001992,Appeal deadline approaching,Urgent,Appeals Team,2026-06-26,2026-06-28,In Progress,,Rule 5 — denied 134 days ago with no appeal filed
+TSK-000050,CLM-001998,Appeal deadline approaching,Urgent,Appeals Team,2026-06-12,2026-06-14,Open,,Rule 5 — denied 353 days ago with no appeal filed

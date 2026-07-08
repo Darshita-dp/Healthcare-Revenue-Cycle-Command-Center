@@ -1,0 +1,8 @@
+service_line_id,service_line_name
+1,Primary Care
+2,Emergency
+3,Cardiology
+4,Orthopedics
+5,Imaging
+6,Laboratory
+7,Behavioral Health
