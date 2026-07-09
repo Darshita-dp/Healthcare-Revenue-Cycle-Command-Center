@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { api, fmtMoney, fmtNum } from "../api/client";
 import {
-  AgingBadge, EmptyState, ErrorState, Filter, FilterBar, Loading, PageHeader, PriorityBadge,
-  StatusBadge, SummaryStrip, useFetch,
+  AgingBadge, EmptyState, ErrorState, Filter, FilterBar, Loading, PageHeader, ScorePill,
+  StatusBadge, SummaryStrip, TierBadge, useFetch,
 } from "../components/ui";
 import { IconSearch } from "../components/Icons";
 import type { ClaimFilters, ClaimList } from "../api/types";
@@ -16,6 +16,7 @@ interface Filters {
   aging_bucket: string;
   denial_reason: string;
   priority: string;
+  tier: string;
   facility: string;
   search: string;
   sort: string;
@@ -23,7 +24,7 @@ interface Filters {
 
 const EMPTY_FILTERS: Filters = {
   payer: "", status: "", aging_bucket: "", denial_reason: "",
-  priority: "", facility: "", search: "", sort: "priority",
+  priority: "", tier: "", facility: "", search: "", sort: "priority",
 };
 
 export default function ClaimsQueue() {
@@ -33,6 +34,7 @@ export default function ClaimsQueue() {
     ...EMPTY_FILTERS,
     aging_bucket: params.get("aging") ?? "",
     status: params.get("status") ?? "",
+    tier: params.get("tier") ?? "",
   });
   const [page, setPage] = useState(0);
 
@@ -47,10 +49,10 @@ export default function ClaimsQueue() {
     () => api.claims({ ...filters, status: "Denied", limit: 1 }), [filters]);
   const over90 = useFetch<ClaimList>(
     () => api.claims({ ...filters, aging_bucket: "90+", open_only: "true", limit: 1 }), [filters]);
-  const urgent = useFetch<ClaimList>(
-    () => api.claims({ ...filters, priority: "Urgent", limit: 1 }), [filters]);
-  const high = useFetch<ClaimList>(
-    () => api.claims({ ...filters, priority: "High", limit: 1 }), [filters]);
+  const critical = useFetch<ClaimList>(
+    () => api.claims({ ...filters, tier: "Critical", limit: 1 }), [filters]);
+  const highTier = useFetch<ClaimList>(
+    () => api.claims({ ...filters, tier: "High", limit: 1 }), [filters]);
 
   const set = (key: keyof Filters) => (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     setFilters((f) => ({ ...f, [key]: e.target.value }));
@@ -61,8 +63,8 @@ export default function ClaimsQueue() {
     ([k, v]) => v !== "" && !(k === "sort" && v === "priority"),
   ).length;
 
-  const highPriority =
-    urgent.data && high.data ? urgent.data.total + high.data.total : null;
+  const criticalHigh =
+    critical.data && highTier.data ? critical.data.total + highTier.data.total : null;
 
   return (
     <>
@@ -75,8 +77,8 @@ export default function ClaimsQueue() {
         cells={[
           { label: "Claims in view", value: claims.data ? fmtNum(claims.data.total) : "…" },
           {
-            label: "High priority",
-            value: highPriority === null ? "…" : fmtNum(highPriority),
+            label: "Critical + High",
+            value: criticalHigh === null ? "…" : fmtNum(criticalHigh),
             tone: "amber",
           },
           { label: "Denied", value: denied.data ? fmtNum(denied.data.total) : "…", tone: "red" },
@@ -115,7 +117,13 @@ export default function ClaimsQueue() {
             {options.data?.denial_reasons.map((r) => <option key={r}>{r}</option>)}
           </select>
         </Filter>
-        <Filter label="Priority">
+        <Filter label="Priority tier">
+          <select value={filters.tier} onChange={set("tier")}>
+            <option value="">All tiers</option>
+            {options.data?.tiers.map((t) => <option key={t}>{t}</option>)}
+          </select>
+        </Filter>
+        <Filter label="Queue priority">
           <select value={filters.priority} onChange={set("priority")}>
             <option value="">All priorities</option>
             {options.data?.priorities.map((p) => <option key={p}>{p}</option>)}
@@ -129,7 +137,7 @@ export default function ClaimsQueue() {
         </Filter>
         <Filter label="Sort by">
           <select value={filters.sort} onChange={set("sort")}>
-            <option value="priority">Priority</option>
+            <option value="priority">Priority score</option>
             <option value="age">Claim age</option>
             <option value="amount">Outstanding $</option>
           </select>
@@ -164,24 +172,21 @@ export default function ClaimsQueue() {
                 <tr>
                   <th>Claim</th>
                   <th>Payer</th>
-                  <th>Facility</th>
-                  <th className="num">Billed</th>
                   <th className="num">Outstanding</th>
                   <th>Status</th>
-                  <th>Denial Reason</th>
                   <th>Age</th>
-                  <th>Priority</th>
-                  <th>Action Needed</th>
+                  <th style={{ minWidth: 120 }}>Priority</th>
+                  <th>Why / Action</th>
                 </tr>
               </thead>
               <tbody>
                 {claims.data.items.map((c) => {
-                  const highRisk =
-                    c.task_priority === "Urgent" || (c.aging_bucket === "90+" && c.outstanding_amount > 5000);
+                  const highRisk = c.priority_tier === "Critical";
+                  const warn = c.priority_tier === "High";
                   return (
                     <tr
                       key={c.claim_id}
-                      className={`clickable${highRisk ? " risk-row" : ""}`}
+                      className={`clickable${highRisk ? " risk-row" : warn ? " warn-row" : ""}`}
                       onClick={() => navigate(`/claims/${c.claim_id}`)}
                     >
                       <td>
@@ -193,25 +198,32 @@ export default function ClaimsQueue() {
                             High value
                           </span>
                         )}
-                        <div className="cell-sub">{c.service_line_name}</div>
+                        <div className="cell-sub">{c.service_line_name} · {c.facility_name}</div>
                       </td>
                       <td>
                         <div className="cell-main" style={{ fontWeight: 550 }}>{c.payer_name}</div>
                         <div className="cell-sub">{c.payer_type}</div>
                       </td>
-                      <td style={{ maxWidth: 170, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                        {c.facility_name}
-                      </td>
-                      <td className="num">{fmtMoney(c.billed_amount)}</td>
                       <td className="num">
                         <strong>{fmtMoney(c.outstanding_amount)}</strong>
                       </td>
                       <td><StatusBadge status={c.claim_status} /></td>
-                      <td>{c.denial_category ?? <span style={{ color: "var(--text-faint)" }}>—</span>}</td>
                       <td><AgingBadge bucket={c.aging_bucket} /></td>
-                      <td><PriorityBadge priority={c.task_priority} /></td>
-                      <td style={{ fontSize: 12.5, color: "var(--text-dim)", maxWidth: 200 }}>
-                        {c.action_needed ?? <span style={{ color: "var(--text-faint)" }}>—</span>}
+                      <td>
+                        <ScorePill score={c.priority_score} tier={c.priority_tier} />
+                        <div style={{ marginTop: 5 }}>
+                          <TierBadge tier={c.priority_tier} />
+                        </div>
+                      </td>
+                      <td style={{ fontSize: 12.5, color: "var(--text-dim)", maxWidth: 240 }}>
+                        {c.priority_top_driver ? (
+                          <span className="cell-main" style={{ fontWeight: 550, color: "var(--text)" }}>
+                            {c.priority_top_driver}
+                          </span>
+                        ) : (
+                          <span style={{ color: "var(--text-faint)" }}>No active risk factors</span>
+                        )}
+                        {c.action_needed && <div className="cell-sub">{c.action_needed}</div>}
                       </td>
                     </tr>
                   );

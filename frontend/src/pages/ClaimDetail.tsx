@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { api, fmtDate, fmtMoneyFull } from "../api/client";
 import {
-  AgingBadge, ErrorState, Field, Loading, PriorityBadge, SectionCard, StatusBadge,
-  TaskStatusBadge, useFetch,
+  AgingBadge, DriverList, ErrorState, Field, Loading, PriorityBadge, ScoreMeter, SectionCard,
+  StatusBadge, TaskStatusBadge, useFetch,
 } from "../components/ui";
-import { IconArrowRight, IconTarget } from "../components/Icons";
+import { IconArrowRight, IconLightning, IconTarget } from "../components/Icons";
 import type { ClaimDetail as ClaimDetailType } from "../api/types";
 
 type DotTone = "blue" | "green" | "red" | "amber" | "purple" | "gray";
@@ -153,6 +153,29 @@ export default function ClaimDetail() {
           </div>
         </div>
       </div>
+
+      <SectionCard
+        title={
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <IconLightning size={16} /> Explainable Priority Score
+          </span>
+        }
+        sub="Transparent, rule-based — every point traces to a documented business reason"
+        style={{ marginBottom: 16 }}
+      >
+        <div className="grid" style={{ gridTemplateColumns: "220px 1fr", gap: 24, alignItems: "start" }}>
+          <div style={{ borderRight: "1px solid var(--border)", paddingRight: 20 }}>
+            <ScoreMeter score={d.priority_score} tier={d.priority_tier} />
+          </div>
+          <div>
+            <p style={{ margin: "0 0 12px", fontSize: 14, fontWeight: 550 }}>{d.priority_summary}</p>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.6, color: "var(--text-faint)", marginBottom: 4 }}>
+              Why this claim is prioritized
+            </div>
+            <DriverList drivers={d.priority_drivers} />
+          </div>
+        </div>
+      </SectionCard>
 
       <div className="action-panel" style={{ marginBottom: 16 }}>
         <span className="ap-icon">

@@ -67,7 +67,7 @@ Build a working system that:
             └────────┬───────────┘
                      ▼
               FastAPI Backend  ──►  React Command Center (6 pages)
-              10 endpoints          KPIs, work queue, payer scorecards
+              12 endpoints          KPIs, work queue, priority, recovery
 ```
 
 Full details: [docs/architecture_diagram.md](docs/architecture_diagram.md)
@@ -102,10 +102,36 @@ See [database/data_dictionary.md](database/data_dictionary.md) and [docs/data_mo
 
 - **Deterministic synthetic data** — realistic denial rates by payer, payment lags, appeal outcomes, and A/R aging without any external data dependency.
 - **Star-schema SQL analytics** — 20+ documented queries in [analytics/](analytics/).
+- **Explainable Claim Priority Score** — a transparent 0–100 score with a business-readable driver breakdown (see below).
+- **Revenue Recovery Simulator** — a leadership decision tool that estimates recoverable revenue from working the top-priority claims first.
 - **Automation rules engine** — 5 business rules that create prioritized follow-up tasks and payer escalation alerts ([automation/alert_rules.md](automation/alert_rules.md)).
-- **FastAPI backend** — 10 endpoints with filtering, runs in CSV mode with zero infrastructure.
-- **React Command Center** — executive KPIs, claims work queue with 7 filters, claim detail timeline, payer scorecards, task management.
+- **FastAPI backend** — 12 endpoints with filtering, runs in CSV mode with zero infrastructure.
+- **React Command Center** — executive KPIs, claims work queue with priority scoring, claim detail timeline, payer scorecards, task management.
 - **Power BI layer** — 5 documented dashboard pages and 14+ DAX measures.
+
+## Decision Support — Priority Scoring & Recovery Simulator
+
+Unlike a basic dashboard that only *reports* denied claims, this system explains **which claims to prioritize** and estimates the **potential recovery impact** of working the top-priority queue. Both features are rule-based and fully transparent — not a black-box ML model.
+
+### Explainable Claim Priority Score
+
+Every claim receives a **0–100 priority score** and a tier (**Critical / High / Medium / Low / Monitor**), plus an ordered list of the exact business reasons that produced the score. Points accrue from high-value denials, A/R aging, payer denial risk, appeal-deadline urgency, denial category, and open financial exposure. The full point schedule lives in [automation/priority_scoring.py](automation/priority_scoring.py) — a single, reusable, dependency-light module so the same rules power the API and could power the ETL layer.
+
+Example (a real scored claim):
+
+```
+Priority Score: 100 / 100  ·  Tier: Critical
+  High-value denial above $5,000 ................. +30
+  Appeal window at risk — denied 20+ days ........ +20
+  Aged 61-90 days with an open balance ........... +18
+  Payer denial rate above 20% .................... +15
+  Open exposure above $10,000 .................... +15
+  Missing documentation denial ................... +8   (capped at 100)
+```
+
+### Revenue Recovery Simulator
+
+Answers a leadership question directly: *"If the team works the top X priority claims at a Y% recovery rate, how much revenue could we recover?"* Select the top **25 / 50 / 100** claims and a **30% / 40% / 50%** recovery assumption; the tool returns the estimated recoverable revenue, the at-risk base (denied + outstanding, de-duplicated), the tier workload, and the top recovery drivers. The recovery rate is an explicit planning assumption applied to at-risk balances — a decision aid, not a guaranteed collection.
 
 ## KPI Definitions
 

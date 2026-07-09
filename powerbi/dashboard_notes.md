@@ -86,6 +86,26 @@ Slicers: date range, facility, payer type.
 
 ---
 
+## Optional Page 6: Priority & Recovery (decision support)
+
+The application layer adds an **explainable claim priority score** (0–100, tiered Critical/High/Medium/Low/Monitor) and a **revenue recovery simulator**. The score is computed in Python ([automation/priority_scoring.py](../automation/priority_scoring.py)) because it blends per-claim facts with a payer-level denial rate; the transparent rule sum can be mirrored in Power BI two ways:
+
+1. **Export the scored claims** from the API (`GET /api/claims?sort=score`) or persist `priority_score` / `priority_tier` into a `fact_claims` extract, then treat them as ordinary columns. This is the recommended path — the rules stay in one place.
+2. **Replicate the rule sum in DAX** for a self-contained model (see the "Explainable Priority Score (optional)" measures in [measures.md](measures.md)).
+
+Suggested layout once `priority_score` / `priority_tier` are present:
+
+| Zone | Visual | Fields / notes |
+|---|---|---|
+| Top | KPI cards | Critical Claims, High-Priority Claims, Critical+High Outstanding, Average Priority Score |
+| Left | Bar — Claims by tier | priority_tier × claim count, ordered Critical→Monitor |
+| Center | Table — Top-priority queue | claim_id, payer, outstanding, priority_score, priority_tier; sort desc by score |
+| Right | Card + what-if | Recovery simulator: a `Claims to Work` (25/50/100) and `Recovery Rate` (30/40/50%) what-if parameter feeding an Estimated Recoverable Revenue measure |
+
+Because the driver-level breakdown ("why +30") is inherently row-level and textual, it is best shown in the React app or a Power BI tooltip/drill-through; the Power BI page focuses on the tier distribution and the recovery estimate. Keep the honest framing: recovery rate is a planning assumption, not a guaranteed collection.
+
+---
+
 ## Interactions & Polish Checklist
 
 - [ ] Sync date slicer across pages 1–4

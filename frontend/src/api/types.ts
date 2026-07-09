@@ -59,8 +59,17 @@ export interface ClaimSummary {
   denial_category: string | null;
   action_needed: string | null;
   task_priority: string | null;
+  priority_score: number;
+  priority_tier: string;
+  priority_top_driver: string | null;
   date_of_service: string;
   claim_submission_date: string;
+}
+
+export interface PriorityDriver {
+  label: string;
+  points: number;
+  category: string;
 }
 
 export interface ClaimList {
@@ -76,6 +85,7 @@ export interface ClaimFilters {
   aging_buckets: string[];
   denial_reasons: string[];
   priorities: string[];
+  tiers: string[];
   facilities: string[];
 }
 
@@ -151,6 +161,10 @@ export interface ClaimDetail {
   payments: PaymentRecord[];
   tasks: TaskRecord[];
   recommended_action: string;
+  priority_score: number;
+  priority_tier: string;
+  priority_summary: string;
+  priority_drivers: PriorityDriver[];
 }
 
 export interface TopDenialReason {
@@ -215,4 +229,57 @@ export interface Alert {
   threshold_pct: number;
   denied_outstanding_amount: number;
   recommended_action: string;
+}
+
+export interface TierCount {
+  tier: string;
+  count: number;
+  outstanding_amount: number;
+}
+
+export interface DriverCount {
+  category: string;
+  label: string;
+  claims: number;
+}
+
+export interface PriorityInsights {
+  scored_open_claims: number;
+  critical_count: number;
+  high_count: number;
+  medium_count: number;
+  low_count: number;
+  monitor_count: number;
+  critical_high_outstanding: number;
+  average_priority_score: number;
+  tier_breakdown: TierCount[];
+  top_drivers: DriverCount[];
+}
+
+export interface SelectedClaimPreview {
+  claim_id: string;
+  payer_name: string;
+  facility_name: string;
+  claim_status: string;
+  outstanding_amount: number;
+  denied_amount: number;
+  priority_score: number;
+  priority_tier: string;
+  top_driver: string | null;
+}
+
+export interface RecoverySimulator {
+  claim_count: number;
+  recovery_rate: number;
+  selected_claim_count: number;
+  total_billed_amount: number;
+  total_outstanding_amount: number;
+  total_denied_amount: number;
+  potential_recovery_base: number;
+  estimated_recoverable_revenue: number;
+  average_priority_score: number;
+  priority_tier_breakdown: TierCount[];
+  top_driver_breakdown: DriverCount[];
+  interpretation: string;
+  selected_claims_preview: SelectedClaimPreview[];
 }

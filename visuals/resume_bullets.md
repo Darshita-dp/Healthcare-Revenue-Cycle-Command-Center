@@ -8,6 +8,7 @@
 - Designed a PostgreSQL star schema for claims, denials, payments, payers, providers, facilities, A/R aging, and follow-up tasks to support KPI reporting and operational analysis
 - Created analytics logic to track denial rate, revenue at risk, payer performance, A/R aging, appeal outcomes, and high-priority follow-up queues
 - Developed automation rules to generate follow-up tasks for high-value denials, aging claims, payer spikes, and approaching appeal deadlines
+- Designed an explainable 0–100 claim priority score (transparent rule-based model with a per-claim driver breakdown) and a revenue recovery simulator estimating recoverable revenue from working the top-priority queue
 
 ## Alternate bullets (pick by target role)
 
@@ -21,7 +22,10 @@
 - Specified a 5-page Power BI executive dashboard with 20+ production-ready DAX measures (time intelligence, normalized composite scoring) over a conformed-dimension star schema
 
 **Full-stack emphasis**
-- Shipped a FastAPI backend (10 endpoints, Pydantic models, 7-parameter filtered work queue) and a React 18 + TypeScript dashboard with six views, priority-ranked worklists, and claim-level event timelines
+- Shipped a FastAPI backend (12 endpoints, Pydantic models, filtered work queue) and a React 18 + TypeScript dashboard with six views, an explainable claim priority score, a revenue recovery simulator, and claim-level event timelines
+
+**Decision-support emphasis**
+- Built an explainable, rule-based claim prioritization engine (0–100 score with transparent driver attribution) and a revenue recovery simulator that projects recoverable dollars from working the top-N priority claims at an adjustable recovery rate
 
 **Automation emphasis**
 - Implemented an idempotent rules engine converting claims analytics into prioritized, SLA-dated follow-up tasks routed to four teams, plus automatic payer escalation alerts at a 20% denial-rate threshold

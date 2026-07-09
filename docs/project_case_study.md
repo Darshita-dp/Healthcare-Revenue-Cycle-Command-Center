@@ -6,6 +6,8 @@ US providers write off billions of dollars a year to claim denials and stalled a
 
 The gap is rarely analytical sophistication — it's **operationalization**. Teams have data; they lack a system that turns that data into a prioritized queue of actions and puts payer behavior on a scoreboard.
 
+Unlike a basic dashboard that only reports denied claims, this system explains **which claims should be prioritized** and estimates the **potential recovery impact** of working the top-priority queue — recreating a simplified, transparent version of revenue cycle decision support.
+
 ## Objective
 
 Build a working, end-to-end system that:
@@ -32,7 +34,8 @@ No public claims dataset ships with denial lifecycles and appeal outcomes, and r
 generator (seed 42) → ETL pipeline → CSV star schema ⇄ PostgreSQL (optional, Docker)
                                    → validation suite (46 checks, gating)
                                    → automation rules engine → tasks + payer alerts
-                                   → FastAPI (10 endpoints) → React Command Center (6 pages)
+                                   → priority scoring + recovery simulator (rule-based)
+                                   → FastAPI (12 endpoints) → React Command Center (6 pages)
                                    → Power BI semantic layer (documented DAX + 5 pages)
 ```
 
@@ -70,6 +73,14 @@ Five rules turn the model into a work system (full spec: [automation/alert_rules
 
 Tasks are deduplicated per (claim, rule), carry SLA due dates by priority (Urgent = 2 days … Low = 15), and regeneration is idempotent. On the seed-42 dataset the engine produces ~430 tasks and a payer escalation alert for State Medicaid at a 25.0% denial rate — exactly the payer configured with the worst behavior, which validates the pipeline end to end.
 
+## Decision Support: Explainable Prioritization & Recovery Simulation
+
+Two features push the project past reporting into decision support. Both are **rule-based and transparent — not a black-box ML model**, which matters in healthcare operations where staff must justify why a claim was worked and leadership must trust the number.
+
+**Explainable Claim Priority Score.** Each claim gets a 0–100 score and a tier (Critical/High/Medium/Low/Monitor) built from six weighted factors — high-value denials, A/R aging, payer denial risk, appeal-deadline urgency, denial category, and open financial exposure. Crucially, the score ships with its **drivers**: the exact contributions that produced it (e.g. "High-value denial above $5,000: +30", "Appeal window at risk: +20"). The logic is one reusable module ([automation/priority_scoring.py](../automation/priority_scoring.py)) with every threshold as an audited constant, so the score is reproducible and defensible line by line.
+
+**Revenue Recovery Simulator.** A leadership decision aid that answers "if the team works the top X priority claims at a Y% recovery rate, how much could we recover?" It ranks open claims by priority score, sums a de-duplicated at-risk base (the larger of outstanding balance or unrecovered denied amount per claim, to avoid double counting), and applies an adjustable recovery-rate assumption. Working the top 50 claims at 40% on the seed-42 dataset estimates roughly $130K recoverable from a ~$330K at-risk base — framed honestly as a planning estimate, not a guaranteed collection.
+
 ## Dashboards
 
 **React Command Center (operations):** executive KPI wall with escalation banner, a claims work queue with seven filters and priority sorting, claim detail with a full event timeline and a recommended next action, payer scorecards with composite risk ranking, and a task queue with overdue flags. Every page has loading, error, and empty states; connection failures show run instructions instead of a blank screen.
@@ -81,7 +92,8 @@ Tasks are deduplicated per (claim, rule), carry SLA due dates by priority (Urgen
 - **Stop high-value leakage:** the day a $19k orthopedics claim is denied, it's a High task in a named team's queue — not a row 4,000 deep in a spreadsheet.
 - **Never miss an appeal window:** the deadline rule converts silent write-offs into urgent, dated work items.
 - **Negotiate with evidence:** payer scorecards and alert history turn "this payer feels slow" into "43-day average payment lag and a 22% denial rate, trending worse since March."
-- **Focus scarce staff:** priority + dollars-at-stake sorting works the queue in value order.
+- **Focus scarce staff:** the explainable priority score works the queue in value order, and every ranking comes with the reasons behind it.
+- **Plan recovery targets:** the simulator lets a manager size the payoff of a focused work sprint before committing staff to it.
 
 ## Future Improvements
 

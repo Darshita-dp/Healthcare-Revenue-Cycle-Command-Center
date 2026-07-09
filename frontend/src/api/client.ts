@@ -4,7 +4,7 @@
 
 import type {
   Aging, Alert, ClaimDetail, ClaimFilters, ClaimList, Health, Kpis,
-  PayerScorecard, TaskList,
+  PayerScorecard, PriorityInsights, RecoverySimulator, TaskList,
 } from "./types";
 
 const BASE = import.meta.env.VITE_API_URL ?? "";
@@ -55,6 +55,9 @@ export const api = {
     get<TaskList>("/api/tasks", params),
   aging: () => get<Aging>("/api/aging"),
   alerts: () => get<Alert[]>("/api/alerts"),
+  priorityInsights: () => get<PriorityInsights>("/api/priority-insights"),
+  recoverySimulator: (params?: Record<string, number | undefined>) =>
+    get<RecoverySimulator>("/api/recovery-simulator", params),
 };
 
 export const fmtMoney = (n: number | null | undefined): string =>

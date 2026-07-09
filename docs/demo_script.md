@@ -14,9 +14,13 @@ Up top: the numbers a CFO asks for every Monday. Thirteen point seven million bi
 
 "Analytics are only useful if they change what someone does at 9 a.m. This is the work queue — every claim, filterable by payer, status, aging bucket, denial reason, priority, and facility, sorted so urgent tasks and the biggest dollars come first. The red-edged rows are high risk: urgent tasks or big balances past ninety days."
 
+**[Command Center — Priority & Recovery block]**
+
+"But which claim first? Every claim gets an explainable priority score, zero to one hundred — and it's transparent, not a black box. Thirty-one Critical claims, fifty High, about four hundred thousand in outstanding tied to them. And this is my favorite piece: the Revenue Recovery Simulator. If the team works the top fifty claims at a forty-percent recovery assumption, the estimated recoverable revenue is about a hundred and thirty thousand dollars. Managers can size a work sprint before committing staff to it."
+
 **[Click a claim → Claim Detail]**
 
-"One click gives the full story: financials, the denial — here, coverage terminated, nineteen thousand dollars — the complete timeline, and a recommended action. Three automation rules fired on this claim, including an urgent one: the appeal window is closing. In a real shop, this is money that quietly dies in a spreadsheet. Here it's an assigned, dated task."
+"One click gives the full story. Look at the priority score — this claim scores one hundred, Critical, and it shows *why*: high-value denial plus thirty, appeal window at risk plus twenty, aging plus eighteen, payer risk plus fifteen. No mystery, no black box — a staffer can defend exactly why they're working it. Below that: financials, the denial, the full timeline, and a recommended action. In a real shop, this is money that quietly dies in a spreadsheet. Here it's an assigned, dated task."
 
 **[Payer Performance]**
 
@@ -30,6 +34,6 @@ Every number ties back to one governed data model — which is really the point:
 
 ---
 
-**Timing guide:** Command Center 25s · Work Queue 20s · Claim Detail 25s · Payers 20s · Close 20s.
+**Timing guide:** Command Center 25s · Work Queue 15s · Priority & Recovery 20s · Claim Detail 20s · Payers 15s · Close 15s.
 
 **If asked "what was hardest?"** — making the synthetic data *behave*: payers needed distinct denial propensities and payment lags, appeal recoveries had to flow back onto claim financials so every table reconciles to the cent, and stale claims had to resolve over time or the aging curve looked absurd. The 46-check validation suite exists because the first version of that logic was wrong in three places.

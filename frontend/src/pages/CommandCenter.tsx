@@ -7,11 +7,12 @@ import { api, fmtMoney, fmtNum } from "../api/client";
 import {
   ErrorState, InsightPanel, Loading, MetricCard, PageHeader, SectionCard, useFetch,
 } from "../components/ui";
+import RecoverySimulator from "../components/RecoverySimulator";
 import {
-  IconAlert, IconCalendar, IconCheckSquare, IconClock, IconDollar, IconShield,
-  IconTrendDown, IconWallet,
+  IconAlert, IconCalendar, IconCheckSquare, IconClock, IconDollar, IconLightning,
+  IconScale, IconShield, IconTarget, IconTrendDown, IconWallet,
 } from "../components/Icons";
-import type { Aging, Alert, Kpis, PayerScorecard, TaskList } from "../api/types";
+import type { Aging, Alert, Kpis, PayerScorecard, PriorityInsights, TaskList } from "../api/types";
 
 // Ordinal single-hue ramp for the aging buckets (light -> dark = young -> old)
 const AGING_RAMP = ["#86b6ef", "#5598e7", "#2a78d6", "#184f95"];
@@ -26,6 +27,7 @@ export default function CommandCenter() {
   const alerts = useFetch<Alert[]>(() => api.alerts());
   const aging = useFetch<Aging>(() => api.aging());
   const tasks = useFetch<TaskList>(() => api.tasks({ limit: 1 }));
+  const insights = useFetch<PriorityInsights>(() => api.priorityInsights());
 
   if (kpis.loading) return <Loading label="Loading command center…" />;
   if (kpis.error) return <ErrorState message={kpis.error} />;
@@ -135,6 +137,65 @@ export default function CommandCenter() {
           icon={<IconCheckSquare size={16} />}
           tone={k.overdue_tasks > 0 ? "amber" : "blue"}
         />
+      </div>
+
+      <div className="section-title">
+        <IconTarget size={17} />
+        Explainable Priority &amp; Recovery
+      </div>
+
+      {insights.data && (
+        <SectionCard
+          title="Priority Queue Snapshot"
+          sub={`Rule-based priority score across ${fmtNum(insights.data.scored_open_claims)} open claims — transparent, not a black-box model`}
+          action={<Link to="/claims?tier=Critical">Work Critical queue →</Link>}
+          style={{ marginBottom: 16 }}
+        >
+          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
+            <MetricCard
+              label="Critical Claims"
+              value={fmtNum(insights.data.critical_count)}
+              context="Score 80–100 · immediate action"
+              icon={<IconAlert size={16} />}
+              tone="red"
+            />
+            <MetricCard
+              label="High Priority"
+              value={fmtNum(insights.data.high_count)}
+              context="Score 60–79 · work this week"
+              icon={<IconTrendDown size={16} />}
+              tone="amber"
+            />
+            <MetricCard
+              label="Critical + High A/R"
+              value={fmtMoney(insights.data.critical_high_outstanding)}
+              context="Outstanding tied to top tiers"
+              icon={<IconDollar size={16} />}
+              tone="teal"
+            />
+            <MetricCard
+              label="Avg Priority Score"
+              value={insights.data.average_priority_score}
+              context="Across open claims"
+              icon={<IconScale size={16} />}
+              tone="blue"
+            />
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 14 }}>
+            <span style={{ fontSize: 11.5, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.6, color: "var(--text-faint)", display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <IconLightning size={13} /> Top drivers
+            </span>
+            {insights.data.top_drivers.slice(0, 4).map((d) => (
+              <span key={d.category} className="badge gray">
+                {d.label} · {fmtNum(d.claims)}
+              </span>
+            ))}
+          </div>
+        </SectionCard>
+      )}
+
+      <div style={{ marginBottom: 16 }}>
+        <RecoverySimulator />
       </div>
 
       <div className="grid two-col" style={{ marginTop: 16 }}>

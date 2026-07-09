@@ -212,6 +212,65 @@ RETURN
     + 0.2 * DIVIDE ( DIVIDE ( [A/R Over 90 Days], [Outstanding A/R] ), MaxAged )
 ```
 
+## Explainable Priority Score & Recovery (optional)
+
+The canonical priority score is computed in Python ([automation/priority_scoring.py](../automation/priority_scoring.py)) so the rules live in one place; the cleanest Power BI path is to load a scored extract that already carries `priority_score` and `priority_tier` (from `GET /api/claims?sort=score`, or by persisting those columns onto `fact_claims`). With those columns present, the tier and recovery visuals are simple:
+
+```dax
+Critical Claims =
+CALCULATE (
+    COUNTROWS ( fact_claims ),
+    fact_claims[priority_tier] = "Critical",
+    fact_claims[is_open] = TRUE ()
+)
+```
+
+```dax
+High Priority Claims =
+CALCULATE (
+    COUNTROWS ( fact_claims ),
+    fact_claims[priority_tier] = "High",
+    fact_claims[is_open] = TRUE ()
+)
+```
+
+```dax
+Critical + High Outstanding =
+CALCULATE (
+    SUM ( fact_claims[outstanding_amount] ),
+    fact_claims[priority_tier] IN { "Critical", "High" },
+    fact_claims[is_open] = TRUE ()
+)
+```
+
+```dax
+Average Priority Score =
+CALCULATE (
+    AVERAGE ( fact_claims[priority_score] ),
+    fact_claims[is_open] = TRUE ()
+)
+```
+
+Revenue Recovery Simulator with two what-if parameters — `Claims to Work` (25/50/100) and `Recovery Rate` (0.30/0.40/0.50). Rank open claims by score, take the top N, and apply the rate to the at-risk base:
+
+```dax
+Estimated Recoverable Revenue =
+VAR N        = SELECTEDVALUE ( 'Claims to Work'[Value], 50 )
+VAR Rate     = SELECTEDVALUE ( 'Recovery Rate'[Value], 0.40 )
+VAR TopClaims =
+    TOPN (
+        N,
+        FILTER ( fact_claims, fact_claims[is_open] = TRUE () ),
+        fact_claims[priority_score], DESC
+    )
+VAR AtRiskBase =
+    SUMX ( TopClaims, MAX ( fact_claims[outstanding_amount], 0 ) )
+RETURN
+    AtRiskBase * Rate
+```
+
+> Honest framing for the page: the recovery rate is a user-set planning assumption applied to at-risk balances, not a guaranteed collection. If you keep priority scoring in the app only, mirror these as documentation rather than live measures.
+
 ## Formatting Guide
 
 | Measure | Format |

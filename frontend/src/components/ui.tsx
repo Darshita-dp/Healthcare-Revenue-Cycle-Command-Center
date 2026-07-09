@@ -282,3 +282,77 @@ export function Field({ label, value }: { label: string; value: React.ReactNode 
     </div>
   );
 }
+
+// --------------------------------------------------------------- priority UI
+const TIER_TONE: Record<string, string> = {
+  Critical: "red",
+  High: "amber",
+  Medium: "blue",
+  Low: "gray",
+  Monitor: "gray",
+};
+
+export function tierTone(tier: string): string {
+  return TIER_TONE[tier] ?? "gray";
+}
+
+export function TierBadge({ tier }: { tier: string }) {
+  return (
+    <span className={`badge ${tierTone(tier)}`}>
+      <span className="dot" />
+      {tier}
+    </span>
+  );
+}
+
+/** Compact score chip with a fill bar — used in table cells. */
+export function ScorePill({ score, tier }: { score: number; tier: string }) {
+  const tone = tierTone(tier);
+  return (
+    <div className="score-pill" title={`${tier} · ${score}/100`}>
+      <span className={`score-num tone-${tone}`}>{score}</span>
+      <span className="score-track">
+        <span className={`score-fill tone-${tone}`} style={{ width: `${score}%` }} />
+      </span>
+    </div>
+  );
+}
+
+/** Large score meter for the claim detail page. */
+export function ScoreMeter({ score, tier }: { score: number; tier: string }) {
+  const tone = tierTone(tier);
+  return (
+    <div className="score-meter">
+      <div className={`score-meter-value tone-${tone}`}>
+        {score}
+        <span className="score-meter-max">/100</span>
+      </div>
+      <div className="score-meter-track">
+        <span className={`score-fill tone-${tone}`} style={{ width: `${score}%` }} />
+      </div>
+      <div style={{ marginTop: 8 }}>
+        <TierBadge tier={tier} />
+      </div>
+    </div>
+  );
+}
+
+export function DriverList({ drivers }: { drivers: { label: string; points: number }[] }) {
+  if (drivers.length === 0) {
+    return (
+      <p style={{ color: "var(--text-dim)", fontSize: 13, margin: 0 }}>
+        No active risk factors — this claim is resolved or within normal timelines.
+      </p>
+    );
+  }
+  return (
+    <ul className="driver-list">
+      {drivers.map((d, i) => (
+        <li key={i}>
+          <span className="driver-label">{d.label}</span>
+          <span className="driver-points">+{d.points}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
