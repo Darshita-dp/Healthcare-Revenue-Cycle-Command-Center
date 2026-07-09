@@ -10,6 +10,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from api.database import DataStore, get_store
 from api.models.schemas import (ClaimDetail, ClaimListResponse, ClaimSummary,
                                 DenialDetail, PaymentRecord, TaskRecord)
+from automation.priority_scoring import summarize
 
 router = APIRouter(tags=["Claims"])
 
@@ -18,6 +19,7 @@ CLAIM_SUMMARY_COLS = [
     "service_line_name", "claim_status", "billed_amount", "outstanding_amount",
     "claim_age_days", "aging_bucket", "is_denied", "is_high_value",
     "denial_category", "action_needed", "task_priority",
+    "priority_score", "priority_tier", "priority_top_driver",
     "date_of_service", "claim_submission_date",
 ]
 
@@ -45,7 +47,8 @@ def list_claims(
     facility: Optional[str] = Query(None, description="Facility name (exact match)"),
     search: Optional[str] = Query(None, description="Substring match on claim ID"),
     open_only: bool = Query(False, description="Only claims still open in A/R"),
-    sort: str = Query("priority", description="priority | age | amount"),
+    tier: Optional[str] = Query(None, description="Priority tier: Critical | High | Medium | Low | Monitor"),
+    sort: str = Query("priority", description="priority | score | age | amount"),
     limit: int = Query(50, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> ClaimListResponse:
@@ -65,6 +68,8 @@ def list_claims(
         df = df[df["task_priority"] == priority]
     if facility:
         df = df[df["facility_name"] == facility]
+    if tier:
+        df = df[df["priority_tier"] == tier]
     if search:
         df = df[df["claim_id"].str.contains(search, case=False, na=False)]
 
@@ -72,10 +77,10 @@ def list_claims(
         df = df.sort_values("claim_age_days", ascending=False)
     elif sort == "amount":
         df = df.sort_values("outstanding_amount", ascending=False)
-    else:  # priority: open tasks first by urgency, then dollars at stake
-        rank = df["task_priority"].map({"Urgent": 0, "High": 1, "Medium": 2, "Low": 3})
-        df = df.assign(_rank=rank.fillna(9)).sort_values(
-            ["_rank", "outstanding_amount"], ascending=[True, False])
+    elif sort == "score":
+        df = df.sort_values(["priority_score", "outstanding_amount"], ascending=[False, False])
+    else:  # priority: explainable score first, then dollars at stake
+        df = df.sort_values(["priority_score", "outstanding_amount"], ascending=[False, False])
 
     total = len(df)
     page = df.iloc[offset:offset + limit]
@@ -93,6 +98,7 @@ def claim_filters(store: DataStore = Depends(get_store)) -> dict:
         "aging_buckets": ["0-30", "31-60", "61-90", "90+"],
         "denial_reasons": sorted(df["denial_category"].dropna().unique().tolist()),
         "priorities": ["Urgent", "High", "Medium", "Low"],
+        "tiers": ["Critical", "High", "Medium", "Low", "Monitor"],
         "facilities": sorted(df["facility_name"].unique().tolist()),
     }
 
@@ -190,6 +196,7 @@ def get_claim(claim_id: str, store: DataStore = Depends(get_store)) -> ClaimDeta
         for t in tasks_df[tasks_df["claim_id"] == claim_id].to_dict("records")
     ]
 
+    drivers = row["priority_drivers"] if isinstance(row["priority_drivers"], list) else []
     return ClaimDetail(
         claim=_to_summaries(match)[0],
         allowed_amount=float(base_row["allowed_amount"]),
@@ -200,4 +207,8 @@ def get_claim(claim_id: str, store: DataStore = Depends(get_store)) -> ClaimDeta
         payments=payments,
         tasks=tasks,
         recommended_action=_recommend(row, denial_detail),
+        priority_score=int(row["priority_score"]),
+        priority_tier=row["priority_tier"],
+        priority_summary=summarize(row["priority_tier"], drivers),
+        priority_drivers=drivers,
     )

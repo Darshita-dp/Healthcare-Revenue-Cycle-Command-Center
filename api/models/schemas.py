@@ -67,8 +67,17 @@ class ClaimSummary(BaseModel):
     denial_category: Optional[str] = None
     action_needed: Optional[str] = None
     task_priority: Optional[str] = None
+    priority_score: int
+    priority_tier: str
+    priority_top_driver: Optional[str] = None
     date_of_service: date
     claim_submission_date: date
+
+
+class PriorityDriver(BaseModel):
+    label: str
+    points: int
+    category: str
 
 
 class ClaimListResponse(BaseModel):
@@ -127,6 +136,10 @@ class ClaimDetail(BaseModel):
     payments: list[PaymentRecord]
     tasks: list[TaskRecord]
     recommended_action: str
+    priority_score: int
+    priority_tier: str
+    priority_summary: str
+    priority_drivers: list[PriorityDriver]
 
 
 class PayerScorecard(BaseModel):
@@ -176,3 +189,59 @@ class Alert(BaseModel):
     threshold_pct: float
     denied_outstanding_amount: float
     recommended_action: str
+
+
+# --------------------------------------------------------------------------- #
+# Decision-support: priority insights + revenue recovery simulator             #
+# --------------------------------------------------------------------------- #
+class TierCount(BaseModel):
+    tier: str
+    count: int
+    outstanding_amount: float
+
+
+class DriverCount(BaseModel):
+    category: str
+    label: str
+    claims: int
+
+
+class PriorityInsights(BaseModel):
+    scored_open_claims: int
+    critical_count: int
+    high_count: int
+    medium_count: int
+    low_count: int
+    monitor_count: int
+    critical_high_outstanding: float
+    average_priority_score: float
+    tier_breakdown: list[TierCount]
+    top_drivers: list[DriverCount]
+
+
+class SelectedClaimPreview(BaseModel):
+    claim_id: str
+    payer_name: str
+    facility_name: str
+    claim_status: str
+    outstanding_amount: float
+    denied_amount: float
+    priority_score: int
+    priority_tier: str
+    top_driver: Optional[str] = None
+
+
+class RecoverySimulatorResponse(BaseModel):
+    claim_count: int
+    recovery_rate: float
+    selected_claim_count: int
+    total_billed_amount: float
+    total_outstanding_amount: float
+    total_denied_amount: float
+    potential_recovery_base: float
+    estimated_recoverable_revenue: float
+    average_priority_score: float
+    priority_tier_breakdown: list[TierCount]
+    top_driver_breakdown: list[DriverCount]
+    interpretation: str
+    selected_claims_preview: list[SelectedClaimPreview]

@@ -18,7 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.database import get_store
 from api.models.schemas import HealthResponse
-from api.routes import claims, kpis, operations, payers
+from api.routes import claims, decision, kpis, operations, payers
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
@@ -48,6 +48,7 @@ app.include_router(kpis.router)
 app.include_router(claims.router)
 app.include_router(payers.router)
 app.include_router(operations.router)
+app.include_router(decision.router)
 
 
 @app.on_event("startup")

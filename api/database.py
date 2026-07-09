@@ -15,6 +15,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from automation.priority_scoring import score_claim
+
 log = logging.getLogger("api.database")
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -102,7 +104,7 @@ class DataStore:
             on="denial_reason_id")
         c = c.merge(
             denials[["claim_id", "denial_category", "denial_code", "denied_amount",
-                     "appeal_status", "appeal_outcome", "recovered_amount"]],
+                     "denial_date", "appeal_status", "appeal_outcome", "recovered_amount"]],
             on="claim_id", how="left")
 
         c["aging_bucket"] = pd.cut(
@@ -119,8 +121,50 @@ class DataStore:
                     .rename(columns={"task_type": "action_needed",
                                      "priority": "task_priority"}))
         c = c.merge(top_task, on="claim_id", how="left")
+
+        # "As of" horizon for age-sensitive logic (the dataset's newest claim)
+        self.as_of = self.tables["fact_claims"]["claim_submission_date"].max()
+
+        self._attach_priority_scores(c)
         self.claims_view = c
         log.info("Built claims view: %s rows", len(c))
+
+    # -------------------------------------------------------- priority scores
+    def _attach_priority_scores(self, c: pd.DataFrame) -> None:
+        """Compute the explainable priority score for every claim in place.
+
+        Adds four columns: priority_score, priority_tier, priority_top_driver,
+        and priority_drivers (list of {label, points, category} dicts). The
+        scoring itself lives in automation.priority_scoring so the exact same
+        rules power the API, and could power the ETL/automation layer too.
+        """
+        # Payer denial rate feeds the "payer risk" rule
+        payer_rate = self.tables["fact_claims"].groupby("payer_id")["is_denied"].mean()
+
+        days_since_denial = (self.as_of - c["denial_date"]).dt.days
+
+        scores, tiers, tops, driver_lists = [], [], [], []
+        for i, row in enumerate(c.itertuples(index=False)):
+            dsd = days_since_denial.iloc[i]
+            result = score_claim(
+                is_denied=bool(row.is_denied),
+                denied_amount=getattr(row, "denied_amount", 0.0),
+                claim_age_days=int(row.claim_age_days),
+                outstanding_amount=float(row.outstanding_amount),
+                payer_denial_rate=float(payer_rate.get(row.payer_id, 0.0)),
+                appeal_status=(row.appeal_status if isinstance(row.appeal_status, str) else None),
+                days_since_denial=None if pd.isna(dsd) else int(dsd),
+                denial_category=(row.denial_category if isinstance(row.denial_category, str) else None),
+            )
+            scores.append(result.score)
+            tiers.append(result.tier)
+            tops.append(result.top_driver)
+            driver_lists.append(result.drivers_as_dicts())
+
+        c["priority_score"] = scores
+        c["priority_tier"] = tiers
+        c["priority_top_driver"] = tops
+        c["priority_drivers"] = driver_lists
 
 
 @lru_cache(maxsize=1)
