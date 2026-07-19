@@ -1,0 +1,86 @@
+# Render Blueprint — Healthcare Revenue Cycle Command Center
+# =============================================================================
+# Two-service deployment:
+#   1. healthcare-rcm-api           FastAPI backend (Python web service)
+#   2. healthcare-rcm-command-center React frontend (Static Site)
+#
+# CSV-mode only — no PostgreSQL / Redis / auth / secrets. The synthetic
+# dataset is generated at build time; the API serves it from data/processed/.
+#
+# Cross-service URL wiring is NOT automated (see the two `sync: false`
+# env vars). Render's `fromService.property: host` returns a hostname only
+# (no scheme), but VITE_API_URL and FRONTEND_URL both need an absolute
+# origin including `https://`. A user enters those two values once, in
+# the dashboard, during the first Blueprint sync.
+#
+# Field reference: https://render.com/docs/blueprint-spec
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # A. FastAPI backend — Web Service (Python)
+  # ---------------------------------------------------------------------------
+  - name: healthcare-rcm-api
+    type: web
+    runtime: python
+    region: oregon
+    plan: free
+    autoDeployTrigger: commit
+    healthCheckPath: /health
+    # Build order matches the local runbook exactly:
+    #   1. install Python deps
+    #   2. generate the deterministic synthetic dataset (seed=42)
+    #   3. run the 46-check data-quality gate (exits non-zero on failure)
+    #   4. generate follow-up tasks + payer alerts consumed by the API
+    buildCommand: |
+      pip install -r requirements.txt
+      python etl/run_pipeline.py
+      python etl/validate_data.py
+      python automation/generate_followup_tasks.py
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # Fully-qualified pin (Render requires the patch version when using
+      # the PYTHON_VERSION env var). See render.com/docs/python-version.
+      - key: PYTHON_VERSION
+        value: "3.11.15"
+      # Public origin of the deployed frontend, used by the FastAPI CORS
+      # allowlist (api/main.py). `sync: false` means the value is entered
+      # once in the dashboard on first Blueprint sync — a Blueprint cannot
+      # inject the static site's full `https://…` URL automatically.
+      # Enter the exact origin with no trailing slash, e.g.
+      #   https://healthcare-rcm-command-center.onrender.com
+      - key: FRONTEND_URL
+        sync: false
+
+  # ---------------------------------------------------------------------------
+  # B. React frontend — Static Site
+  # ---------------------------------------------------------------------------
+  - name: healthcare-rcm-command-center
+    type: web
+    runtime: static
+    region: oregon
+    autoDeployTrigger: commit
+    # `rootDir` scopes build + build-trigger detection to frontend/. With
+    # this set, staticPublishPath is evaluated relative to frontend/, so
+    # `./dist` resolves to `frontend/dist`.
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    # SPA rewrite: every unmatched path serves index.html so React Router
+    # owns the URL. This covers /claims, /claims/CLM-…, /payers, /tasks,
+    # /about, and any deep link a user pastes or refreshes on.
+    # Docs: render.com/docs/redirects-rewrites
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # Absolute origin of the deployed API, embedded into the JS bundle
+      # at build time (Vite reads VITE_API_URL from process.env). Enter
+      # once in the dashboard on first Blueprint sync — a Blueprint cannot
+      # inject the backend's full `https://…` URL automatically. Example:
+      #   https://healthcare-rcm-api.onrender.com
+      # Changing this value later requires a manual redeploy of the static
+      # site so the new value is baked into a fresh build.
+      - key: VITE_API_URL
+        sync: false
