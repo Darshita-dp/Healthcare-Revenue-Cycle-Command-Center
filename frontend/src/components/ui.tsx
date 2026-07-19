@@ -189,18 +189,26 @@ export function Loading({ label = "Loading…" }: { label?: string }) {
   );
 }
 
-export function ErrorState({ message }: { message: string }) {
-  const isConn = message.includes("Cannot reach");
+export function ErrorState({ message, code }: { message: string; code?: string }) {
+  // Public-facing wording — never leak local-dev instructions to visitors.
+  // In development we still surface the raw error under the friendly text so
+  // engineers can debug (browser console + this line). API_UNREACHABLE covers
+  // network failures, CORS, and Render free-tier cold starts.
+  const isUnreachable = code === "API_UNREACHABLE" || message.includes("temporarily unavailable");
+  const title = isUnreachable ? "The demo API is temporarily unavailable" : "Something went wrong";
+  const body = isUnreachable
+    ? "Please try again in a moment. If the app has been idle it may take a few seconds to wake up."
+    : message;
   return (
     <div className="state-box">
       <div className="state-icon" style={{ background: "var(--red-soft)", color: "var(--red)" }}>
         <IconAlert size={24} />
       </div>
-      <h3>{isConn ? "API not reachable" : "Something went wrong"}</h3>
-      <p>{message}</p>
-      {isConn && (
-        <p>
-          From the repository root run <code>uvicorn api.main:app --reload</code>, then refresh.
+      <h3>{title}</h3>
+      <p>{body}</p>
+      {import.meta.env.DEV && isUnreachable && (
+        <p style={{ fontSize: 12, color: "var(--text-faint)" }}>
+          <strong>Dev-only detail:</strong> the API at <code>{import.meta.env.VITE_API_URL || "(same origin, via Vite proxy)"}</code> could not be reached. Original error: {message}
         </p>
       )}
     </div>
