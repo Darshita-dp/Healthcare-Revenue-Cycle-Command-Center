@@ -81,9 +81,13 @@ class DataStore:
             self.tables[name] = df
         if missing:
             raise RuntimeError(
-                f"Missing processed tables: {missing}. "
-                "Run `python etl/run_pipeline.py` and "
-                "`python automation/generate_followup_tasks.py` first.")
+                "Cannot start the API — required processed CSV files are missing "
+                f"from {PROCESSED_DIR}: {missing}. Generate the synthetic dataset "
+                "first by running `python etl/run_pipeline.py` and "
+                "`python automation/generate_followup_tasks.py` from the repository "
+                "root. In a hosted deployment these run as part of the build step, "
+                "so a missing-file error here usually means the build did not "
+                "complete successfully.")
         log.info("Loaded %s tables from CSV", len(self.tables))
 
     # ----------------------------------------------------------------- views
