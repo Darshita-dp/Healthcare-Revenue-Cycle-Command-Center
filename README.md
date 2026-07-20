@@ -22,6 +22,15 @@
 [![How to Run](https://img.shields.io/badge/▸%20How%20to%20Run-06B6D4?style=for-the-badge)](#how-to-run)
 [![Data Dictionary](https://img.shields.io/badge/▸%20Data%20Dictionary-475569?style=for-the-badge)](database/data_dictionary.md)
 
+<br/>
+
+![Live Demo (not yet deployed)](https://img.shields.io/badge/Live%20Demo-not%20yet%20deployed-8593A9?style=for-the-badge)
+![API Docs (not yet deployed)](https://img.shields.io/badge/API%20Docs-not%20yet%20deployed-8593A9?style=for-the-badge)
+[![GitHub Source](https://img.shields.io/badge/GitHub%20Source-0B2545?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Darshita-dp/Healthcare-Revenue-Cycle-Command-Center)
+[![Deploy Guide](https://img.shields.io/badge/Deploy%20Guide-0E8F7E?style=for-the-badge)](docs/deployment.md)
+
+<sub>The Live Demo and API Docs URLs will replace the placeholder buttons above after the first Render deployment.</sub>
+
 </div>
 
 > **Synthetic data only — no PHI.** Every patient, provider, facility, and payer record is programmatically generated. All organization names are fictional and all NPIs are fake. This is a portfolio project, **not** a real healthcare deployment.
@@ -266,6 +275,40 @@ Shortcuts via Makefile: `make pipeline`, `make validate`, `make api`, `make fron
 
 ---
 
+## Deployment
+
+The repository is **configured to deploy on [Render](https://render.com)** using the committed Blueprint at [`render.yaml`](render.yaml). The deployment publishes two services from a single push:
+
+| Service | What it is |
+|---|---|
+| `healthcare-rcm-api` | FastAPI backend (Python), CSV-mode synthetic data layer, dataset built during deploy |
+| `healthcare-rcm-command-center` | React + Vite static site, published from `frontend/dist` |
+
+**PostgreSQL is optional and is not required** for the portfolio deployment. Live URLs are inserted at the top of this README after the first successful deployment; the placeholder buttons above are intentionally styled as not-yet-deployed.
+
+**Hosted request flow**
+
+```
+Browser  →  Render Static Site  →  FastAPI Web Service  →  In-memory synthetic CSV dataset
+             (VITE_API_URL              (CSV mode default,       (built by etl/run_pipeline.py
+              baked at build)            CORS from FRONTEND_URL)   during the backend deploy)
+```
+
+**Environment variables — enter once in the Render dashboard on first Blueprint sync**
+
+| Service | Variable | Value |
+|---|---|---|
+| Backend | `FRONTEND_URL` | Full frontend origin, e.g. `https://healthcare-rcm-command-center.onrender.com` (scheme required, no trailing slash, no path) |
+| Frontend | `VITE_API_URL` | Full backend origin, e.g. `https://healthcare-rcm-api.onrender.com` (embedded at build time; changing it requires a frontend redeploy) |
+
+Render **may append a hostname suffix** if a service name is already claimed. If so, update both variables to the actual URLs after the first deploy.
+
+**Free-tier note:** the backend Web Service may spin down when idle. The first request after inactivity is slower while the service wakes up; subsequent requests are fast. The frontend already shows a public-friendly *"temporarily unavailable — please try again in a moment"* message during that window — this does not indicate a broken deployment.
+
+Full procedure, environment-variable reference, and troubleshooting (CORS errors, missing CSVs, cold starts, direct-route 404s): **[docs/deployment.md](docs/deployment.md)**.
+
+---
+
 ## Result
 
 A complete, runnable revenue cycle analytics system:
@@ -305,7 +348,7 @@ In a real deployment, a system like this would let a revenue cycle team:
 
 ## Documentation
 
-[Case Study](docs/project_case_study.md) · [Architecture](docs/architecture_diagram.md) · [Data Model](docs/data_model_diagram.md) · [Process Flow](docs/process_flow.md) · [Demo Script](docs/demo_script.md) · [Data Dictionary](database/data_dictionary.md)
+[Case Study](docs/project_case_study.md) · [Architecture](docs/architecture_diagram.md) · [Data Model](docs/data_model_diagram.md) · [Process Flow](docs/process_flow.md) · [Demo Script](docs/demo_script.md) · [Deployment Guide](docs/deployment.md) · [Data Dictionary](database/data_dictionary.md)
 
 ---
 
