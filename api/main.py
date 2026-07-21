@@ -88,6 +88,20 @@ def warm_store() -> None:
     get_store()
 
 
+@app.get("/", tags=["System"], summary="API landing page")
+def root() -> dict:
+    """Public landing response so hitting the bare API origin returns a
+    professional payload instead of 404. No secrets, no PHI, no paths."""
+    return {
+        "name": "Healthcare Revenue Cycle Command Center API",
+        "status": "ok",
+        "data_mode": "synthetic",
+        "health": "/health",
+        "documentation": "/docs",
+        "openapi": "/openapi.json",
+    }
+
+
 @app.get("/health", response_model=HealthResponse, tags=["System"],
          summary="Liveness check + data source mode")
 def health() -> HealthResponse:
