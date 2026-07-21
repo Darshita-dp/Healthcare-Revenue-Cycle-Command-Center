@@ -24,12 +24,10 @@
 
 <br/>
 
-![Live Demo (not yet deployed)](https://img.shields.io/badge/Live%20Demo-not%20yet%20deployed-8593A9?style=for-the-badge)
-![API Docs (not yet deployed)](https://img.shields.io/badge/API%20Docs-not%20yet%20deployed-8593A9?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/▸%20Live%20Demo-10B981?style=for-the-badge)](https://healthcare-rcm-command-center.onrender.com)
+[![API Docs](https://img.shields.io/badge/▸%20API%20Docs-0E8F7E?style=for-the-badge)](https://healthcare-rcm-api.onrender.com/docs)
 [![GitHub Source](https://img.shields.io/badge/GitHub%20Source-0B2545?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Darshita-dp/Healthcare-Revenue-Cycle-Command-Center)
 [![Deploy Guide](https://img.shields.io/badge/Deploy%20Guide-0E8F7E?style=for-the-badge)](docs/deployment.md)
-
-<sub>The Live Demo and API Docs URLs will replace the placeholder buttons above after the first Render deployment.</sub>
 
 </div>
 
@@ -277,14 +275,23 @@ Shortcuts via Makefile: `make pipeline`, `make validate`, `make api`, `make fron
 
 ## Deployment
 
-The repository is **configured to deploy on [Render](https://render.com)** using the committed Blueprint at [`render.yaml`](render.yaml). The deployment publishes two services from a single push:
+The application is **live on [Render](https://render.com)**, deployed from the committed Blueprint at [`render.yaml`](render.yaml) as two services:
 
 | Service | What it is |
 |---|---|
 | `healthcare-rcm-api` | FastAPI backend (Python), CSV-mode synthetic data layer, dataset built during deploy |
 | `healthcare-rcm-command-center` | React + Vite static site, published from `frontend/dist` |
 
-**PostgreSQL is optional and is not required** for the portfolio deployment. Live URLs are inserted at the top of this README after the first successful deployment; the placeholder buttons above are intentionally styled as not-yet-deployed.
+**Live URLs**
+
+| Resource | Live URL |
+|---|---|
+| React Application | <https://healthcare-rcm-command-center.onrender.com> |
+| FastAPI Backend | <https://healthcare-rcm-api.onrender.com> |
+| Swagger API Docs | <https://healthcare-rcm-api.onrender.com/docs> |
+| Health Check | <https://healthcare-rcm-api.onrender.com/health> |
+
+**PostgreSQL is optional and is not required** for the portfolio deployment — the API runs in CSV mode.
 
 **Hosted request flow**
 
@@ -301,7 +308,7 @@ Browser  →  Render Static Site  →  FastAPI Web Service  →  In-memory synth
 | Backend | `FRONTEND_URL` | Full frontend origin, e.g. `https://healthcare-rcm-command-center.onrender.com` (scheme required, no trailing slash, no path) |
 | Frontend | `VITE_API_URL` | Full backend origin, e.g. `https://healthcare-rcm-api.onrender.com` (embedded at build time; changing it requires a frontend redeploy) |
 
-Render **may append a hostname suffix** if a service name is already claimed. If so, update both variables to the actual URLs after the first deploy.
+Render **may append a hostname suffix** if a service name is already claimed. In the current deployment both services took the predicted names above; if you fork and redeploy, update both variables to whatever Render actually assigns.
 
 **Free-tier note:** the backend Web Service may spin down when idle. The first request after inactivity is slower while the service wakes up; subsequent requests are fast. The frontend already shows a public-friendly *"temporarily unavailable — please try again in a moment"* message during that window — this does not indicate a broken deployment.
 
