@@ -58,7 +58,8 @@ services:
   - name: healthcare-rcm-command-center
     type: web
     runtime: static
-    region: oregon
+    # No `region` on static sites — Render serves them from its global CDN
+    # and the Blueprint validator rejects `region` under a static service.
     autoDeployTrigger: commit
     # `rootDir` scopes build + build-trigger detection to frontend/. With
     # this set, staticPublishPath is evaluated relative to frontend/, so
