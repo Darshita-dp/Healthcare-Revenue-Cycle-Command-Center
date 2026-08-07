@@ -28,7 +28,7 @@ Up top: the numbers a CFO asks for every Monday. Thirteen point seven million bi
 
 **[About page, briefly]**
 
-"Under the hood: a PostgreSQL star schema, a Python ETL pipeline with a forty-six-check validation suite, forty documented SQL queries, a FastAPI backend, this React front end, and a fully documented Power BI layer with production DAX.
+"Under the hood: a PostgreSQL star schema, a Python ETL pipeline with a forty-six-check validation suite, forty documented SQL queries, a FastAPI backend, this React front end, and a five-page Power BI executive dashboard with production DAX.
 
 Every number ties back to one governed data model — which is really the point: not a dashboard, but a system that turns claims data into prioritized work."
 

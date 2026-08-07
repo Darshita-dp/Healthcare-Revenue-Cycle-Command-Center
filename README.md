@@ -44,7 +44,7 @@
 | **Core users** | Revenue cycle leaders, billing analysts, denial-management teams |
 | **Main outcome** | Prioritized claims work queue + recovery-impact estimate |
 | **Data** | Synthetic healthcare revenue cycle data only (fixed seed, reproducible) |
-| **Stack** | Python · SQL · FastAPI · React · Power BI documentation |
+| **Stack** | Python · SQL · FastAPI · React · Power BI |
 
 **Tech stack by layer**
 
@@ -56,7 +56,7 @@
 | Automation | Python rules engine → follow-up tasks & payer alerts |
 | API | FastAPI + Uvicorn |
 | Frontend | React 18, TypeScript, Vite, custom design system |
-| BI | Power BI (documented pages + DAX measures + export queries) |
+| BI | Power BI (5-page executive dashboard, `.pbix` + DAX measures + export queries) |
 
 ---
 
@@ -83,7 +83,7 @@ This system helps teams **find where money is stuck, understand why, and decide 
 - **Automates** follow-up tasks and payer alerts from transparent business rules
 - **Scores** every claim 0–100 with an explainable, rule-based priority model
 - **Estimates** potential recovery from working the top-priority claims first
-- **Presents** insights through a FastAPI backend, a React dashboard, and a documented Power BI reporting layer
+- **Presents** insights through a FastAPI backend, a React dashboard, and a 5-page Power BI executive dashboard
 
 **Synthetic dataset (seed 42 — every run reproduces the same data):**
 
@@ -138,7 +138,7 @@ CSV-first is deliberate: the whole system runs with `pip install` + `npm install
 | **Revenue Recovery Simulator** | Estimates recoverable revenue from working the top-priority queue first |
 | **FastAPI backend** | 12 documented endpoints, runs in CSV mode with zero infrastructure |
 | **React operational dashboard** | Six executive and operational views on a custom design system |
-| **Power BI reporting layer** | 5 documented pages + production-ready DAX measures |
+| **Power BI executive dashboard** | 5-page `.pbix` + production-ready DAX measures |
 
 ---
 
@@ -230,7 +230,7 @@ The Power BI dashboard provides an executive reporting layer focused on revenue 
 | **Automation** | Creates tasks and alerts from business rules |
 | **API** | Serves KPIs, claims, payer metrics, tasks, priority insights, recovery simulator |
 | **Frontend** | React dashboard for operational and executive views |
-| **Power BI** | Documented executive reporting layer with DAX measures |
+| **Power BI** | 5-page executive dashboard (`.pbix`) with DAX measures |
 
 **Automation rules** (full spec: [automation/alert_rules.md](automation/alert_rules.md)):
 
@@ -356,7 +356,7 @@ A complete, runnable revenue cycle analytics system:
 - **Automation** — rule-generated, SLA-dated follow-up tasks and payer alerts
 - **Explainable priority scoring** — transparent 0–100 score with per-claim drivers
 - **Revenue recovery simulator** — recovery estimates from the top-priority queue
-- **Power BI documentation** — 5 documented pages and production-ready DAX measures
+- **Power BI executive dashboard** — 5-page `.pbix` and production-ready DAX measures
 
 ---
 

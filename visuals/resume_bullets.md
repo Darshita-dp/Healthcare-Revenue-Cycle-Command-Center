@@ -4,7 +4,7 @@
 
 **Healthcare Revenue Cycle Command Center | SQL, Python, Power BI, React, FastAPI**
 
-- Built an end-to-end healthcare revenue cycle analytics system using synthetic claims data, SQL data modeling, Python ETL, Power BI dashboard planning, and a React operational interface
+- Built an end-to-end healthcare revenue cycle analytics system using synthetic claims data, SQL data modeling, Python ETL, a 5-page Power BI executive dashboard, and a React operational interface
 - Designed a PostgreSQL star schema for claims, denials, payments, payers, providers, facilities, A/R aging, and follow-up tasks to support KPI reporting and operational analysis
 - Created analytics logic to track denial rate, revenue at risk, payer performance, A/R aging, appeal outcomes, and high-priority follow-up queues
 - Developed automation rules to generate follow-up tasks for high-value denials, aging claims, payer spikes, and approaching appeal deadlines
@@ -19,7 +19,7 @@
 - Authored 40 documented PostgreSQL queries (window functions, CTEs, FILTER aggregates) implementing executive, denial, A/R aging, and payer-performance KPIs, including a composite payer risk score used for escalation ranking
 
 **BI emphasis**
-- Specified a 5-page Power BI executive dashboard with 20+ production-ready DAX measures (time intelligence, normalized composite scoring) over a conformed-dimension star schema
+- Built a 5-page Power BI executive dashboard with 20+ production-ready DAX measures (time intelligence, normalized composite scoring) over a conformed-dimension star schema
 
 **Full-stack emphasis**
 - Shipped a FastAPI backend (12 endpoints, Pydantic models, filtered work queue) and a React 18 + TypeScript dashboard with six views, an explainable claim priority score, a revenue recovery simulator, and claim-level event timelines
@@ -32,4 +32,4 @@
 
 ## One-liner (for a projects section with tight space)
 
-- Built an end-to-end revenue cycle analytics platform (PostgreSQL star schema, Python ETL + validation, FastAPI, React, documented Power BI/DAX layer) that converts claims and denial data into prioritized follow-up work queues
+- Built an end-to-end revenue cycle analytics platform (PostgreSQL star schema, Python ETL + validation, FastAPI, React, 5-page Power BI dashboard with DAX) that converts claims and denial data into prioritized follow-up work queues

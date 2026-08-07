@@ -13,7 +13,7 @@ I wanted to understand that problem end to end, so I built a **Healthcare Revenu
 🔹 An **explainable claim priority score** (0–100) — every claim shows *why* it's a priority, point by point, no black box
 🔹 A **revenue recovery simulator** — "work the top 50 claims at a 40% recovery rate → ~$130K estimated recoverable"
 🔹 A FastAPI backend + React operational dashboard: claims work queue, claim-level timelines, payer risk scorecards
-🔹 A fully documented Power BI executive layer with production-ready DAX
+🔹 A 5-page Power BI executive dashboard (`.pbix` + production-ready DAX)
 
 The design idea I kept coming back to: **a dashboard tells you there's a problem; a command center tells you what to do first — and why.** Every metric in this system ends in a queue, a priority, and an owner. I kept the prioritization deliberately rule-based and transparent, because in revenue cycle work a person has to be able to defend why a claim was worked.
 

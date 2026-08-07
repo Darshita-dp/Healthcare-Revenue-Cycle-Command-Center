@@ -36,7 +36,7 @@ generator (seed 42) → ETL pipeline → CSV star schema ⇄ PostgreSQL (optiona
                                    → automation rules engine → tasks + payer alerts
                                    → priority scoring + recovery simulator (rule-based)
                                    → FastAPI (12 endpoints) → React Command Center (6 pages)
-                                   → Power BI semantic layer (documented DAX + 5 pages)
+                                   → Power BI 5-page executive dashboard (.pbix + DAX)
 ```
 
 CSV-first was a deliberate choice: a reviewer can run the entire system with `pip install` and `npm install` — no Docker, no database. The identical schema exists as PostgreSQL DDL with FKs, checks, and indexes for the database-backed path.
@@ -85,7 +85,7 @@ Two features push the project past reporting into decision support. Both are **r
 
 **React Command Center (operations):** executive KPI wall with escalation banner, a claims work queue with seven filters and priority sorting, claim detail with a full event timeline and a recommended next action, payer scorecards with composite risk ranking, and a task queue with overdue flags. Every page has loading, error, and empty states; connection failures show run instructions instead of a blank screen.
 
-**Power BI (executives):** five fully specified pages (Executive Overview, Denial Analysis, A/R Aging, Payer Performance, Work Queue) with 20+ production-ready DAX measures. Documented honestly as a design layer — no fake `.pbix`, no fake screenshots.
+**Power BI (executives):** five built pages (Executive Overview, Denial Analysis, A/R Aging, Payer Performance, Work Queue) with 20+ production-ready DAX measures. The `.pbix` and page screenshots are committed in [`powerbi/`](../powerbi/).
 
 ## Business Impact (what this would do in production)
 
