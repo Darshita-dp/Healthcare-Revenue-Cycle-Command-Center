@@ -204,15 +204,15 @@ The Power BI dashboard provides an executive reporting layer focused on revenue 
 
 <table>
   <tr>
-    <td width="50%" valign="top"><b>1 Executive Overview</b><br/><img src="powerbi/screenshots/powerbi/executive_overview.png" alt="Power BI Executive Overview dashboard" width="100%"/></td>
-    <td width="50%" valign="top"><b>2 Denial Analysis</b><br/><img src="powerbi/screenshots/powerbi/denial_analysis.png" alt="Power BI Denial Analysis dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>1 Executive Overview</b><br/><img src="powerbi/pbi_pages/executive_overview.png" alt="Power BI Executive Overview dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>2 Denial Analysis</b><br/><img src="powerbi/pbi_pages/denial_analysis.png" alt="Power BI Denial Analysis dashboard" width="100%"/></td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><b>3 A/R Aging</b><br/><img src="powerbi/screenshots/powerbi/ar_aging.png" alt="Power BI A/R Aging dashboard" width="100%"/></td>
-    <td width="50%" valign="top"><b>4 Payer Performance</b><br/><img src="powerbi/screenshots/powerbi/payer_performance.png" alt="Power BI Payer Performance dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>3 A/R Aging</b><br/><img src="powerbi/pbi_pages/ar_aging.png" alt="Power BI A/R Aging dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>4 Payer Performance</b><br/><img src="powerbi/pbi_pages/payer_performance.png" alt="Power BI Payer Performance dashboard" width="100%"/></td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><b>5 Work Queue & Recovery</b><br/><img src="powerbi/screenshots/powerbi/work_queue_recovery.png" alt="Power BI Work Queue and Recovery dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>5 Work Queue & Recovery</b><br/><img src="powerbi/pbi_pages/work_queue_recovery.png" alt="Power BI Work Queue and Recovery dashboard" width="100%"/></td>
     <td width="50%" valign="top"><b>Power BI Artifact</b><br/>The Power BI file is included at <code>powerbi/Healthcare_Revenue_Cycle_Command_Center.pbix</code>.</td>
   </tr>
 </table>
