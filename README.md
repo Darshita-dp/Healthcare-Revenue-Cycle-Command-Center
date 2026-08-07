@@ -173,7 +173,7 @@ Pick a claim count and a recovery-rate assumption (**30% / 40% / 50%**); it rank
 
 ---
 
-## Dashboard Preview
+## React Dashboard Preview
 
 <table>
   <tr>
@@ -187,6 +187,35 @@ Pick a claim count and a recovery-rate assumption (**30% / 40% / 50%**); it rank
 </table>
 
 *All screenshots are captured from the running React app against the live API — none are mockups.* More views (follow-up tasks, data dictionary) in [powerbi/screenshots/](powerbi/screenshots/).
+
+---
+
+## Power BI Executive Dashboard
+
+The Power BI dashboard provides an executive reporting layer focused on revenue cycle performance, denial root causes, A/R aging, payer performance, and recovery opportunity.
+
+| Page | Purpose |
+|---|---|
+| **1 Executive Overview** | Summarizes billed revenue, paid revenue, outstanding A/R, denial rate, clean claim rate, A/R over 90 days, and open follow-up tasks |
+| **2 Denial Analysis** | Explains denial root causes, preventable denial categories, appeal outcomes, and recovered revenue |
+| **3 A/R Aging** | Shows unpaid claim balances by aging bucket, payer, facility, and high-risk receivables |
+| **4 Payer Performance** | Compares payer denial rates, payment speed, outstanding A/R, and revenue risk |
+| **5 Work Queue & Recovery** | Highlights prioritized follow-up work, overdue tasks, and estimated recovery opportunity |
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><b>1 Executive Overview</b><br/><img src="powerbi/screenshots/powerbi/executive_overview.png" alt="Power BI Executive Overview dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>2 Denial Analysis</b><br/><img src="powerbi/screenshots/powerbi/denial_analysis.png" alt="Power BI Denial Analysis dashboard" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><b>3 A/R Aging</b><br/><img src="powerbi/screenshots/powerbi/ar_aging.png" alt="Power BI A/R Aging dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>4 Payer Performance</b><br/><img src="powerbi/screenshots/powerbi/payer_performance.png" alt="Power BI Payer Performance dashboard" width="100%"/></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><b>5 Work Queue & Recovery</b><br/><img src="powerbi/screenshots/powerbi/work_queue_recovery.png" alt="Power BI Work Queue and Recovery dashboard" width="100%"/></td>
+    <td width="50%" valign="top"><b>Power BI Artifact</b><br/>The `.pbix` file is included at <code>powerbi/Healthcare_Revenue_Cycle_Command_Center.pbix</code>.</td>
+  </tr>
+</table>
 
 ---
 
