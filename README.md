@@ -213,7 +213,7 @@ The Power BI dashboard provides an executive reporting layer focused on revenue 
   </tr>
   <tr>
     <td width="50%" valign="top"><b>5 Work Queue & Recovery</b><br/><img src="powerbi/screenshots/powerbi/work_queue_recovery.png" alt="Power BI Work Queue and Recovery dashboard" width="100%"/></td>
-    <td width="50%" valign="top"><b>Power BI Artifact</b><br/>The `.pbix` file is included at <code>powerbi/Healthcare_Revenue_Cycle_Command_Center.pbix</code>.</td>
+    <td width="50%" valign="top"><b>Power BI Artifact</b><br/>The Power BI file is included at <code>powerbi/Healthcare_Revenue_Cycle_Command_Center.pbix</code>.</td>
   </tr>
 </table>
 
